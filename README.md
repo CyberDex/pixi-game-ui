@@ -14,7 +14,7 @@ To run this project, you need to have `Node.js` and `npm` installed on your syst
 
 ```sh
 # Clone the repository
-git clone https://github.com/CyberDex/pixijs-game-ui
+git clone https://github.com/CyberDex/pixi-game-ui
 
 # Clone the repository
 cd ./pixijs-game-ui
