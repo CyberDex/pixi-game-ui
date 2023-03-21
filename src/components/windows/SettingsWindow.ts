@@ -244,22 +244,20 @@ export class SettingsWindow extends Window {
         const gpuCheckbox = new Switch(text, checked, cb); // create a new Switch component (see Switch.ts)
         
         this.addContent({ // add the checkBox like switches section to the window layout system
-            bgm: { // id of the checkBox like switches section layout
-                content: { // object with the content of the layout ans its styles
-                    switch: { // id of the switch layout
-                        content: gpuCheckbox, // add the switch component to the layout
-                        styles: { // styles of the switch layout
-                            marginLeft: 180, // move the switch 180px to the right from the left side of the parent
-                            marginTop: 25, // move the switch 25px down from the top of the parent
-                        }
+            content: { // object with the content of the layout ans its styles
+                switch: { // id of the switch layout
+                    content: gpuCheckbox, // add the switch component to the layout
+                    styles: { // styles of the switch layout
+                        marginLeft: 180, // move the switch 180px to the right from the left side of the parent
+                        marginTop: 25, // move the switch 25px down from the top of the parent
                     }
-                },
-                styles: { // styles of the checkBox like switches section layout
-                    marginTop: y, // move the checkBox like switches section y px down from the top of the parent
-                    marginLeft: x, // move the checkBox like switches section x px to the right from the left side of the parent
-                    width: 350, // set the width of the checkBox like switches section to 350px
-                    height: 120, // set the height of the checkBox like switches section to 120px
                 }
+            },
+            styles: { // styles of the checkBox like switches section layout
+                marginTop: y, // move the checkBox like switches section y px down from the top of the parent
+                marginLeft: x, // move the checkBox like switches section x px to the right from the left side of the parent
+                width: 350, // set the width of the checkBox like switches section to 350px
+                height: 120, // set the height of the checkBox like switches section to 120px
             }
         });
     }
@@ -273,33 +271,31 @@ export class SettingsWindow extends Window {
         checked = false // initial state of the checkbox
         ) {
         this.addContent({ // add the checkBox section to the window layout system
-            subtitles: { // id of the checkBox section layout
-                content: { // object with the content of the layout ans its styles
-                    switch: { // id of the switch layout
-                        content: new CheckBox({ // create a new CheckBox component (see CheckBox.ts)
-                            text, // text of the checkbox
-                            checked, // initial state of the checkbox
-                            checkboxBG: 'RoundSubstrate', // background of the checkbox
-                            checkboxFG: 'CheckBox', // foreground of the checkbox
-                            onChange: cb, // callback function that will be called when the checkbox state changes
-                            textOffset: { // offset of the text from the checkbox
-                                x: -300, // move the text 300px to the left from the checkbox
-                                y: 3, // move the text 3px down from the checkbox
-                            }
-                        }),
-                        styles: { // styles of the switch layout
-                            marginLeft: 280, // move the switch 280px to the right from the left side of the parent
-                            marginTop: 25, // move the switch 25px down from the top of the parent
+            content: { // object with the content of the layout ans its styles
+                switch: { // id of the switch layout
+                    content: new CheckBox({ // create a new CheckBox component (see CheckBox.ts)
+                        text, // text of the checkbox
+                        checked, // initial state of the checkbox
+                        checkboxBG: 'RoundSubstrate', // background of the checkbox
+                        checkboxFG: 'CheckBox', // foreground of the checkbox
+                        onChange: cb, // callback function that will be called when the checkbox state changes
+                        textOffset: { // offset of the text from the checkbox
+                            x: -300, // move the text 300px to the left from the checkbox
+                            y: 3, // move the text 3px down from the checkbox
                         }
+                    }),
+                    styles: { // styles of the switch layout
+                        marginLeft: 280, // move the switch 280px to the right from the left side of the parent
+                        marginTop: 25, // move the switch 25px down from the top of the parent
                     }
-                },
-                styles: { // styles of the checkBox section layout
-                    marginTop: y, // move the checkBox section y px down from the top of the parent
-                    marginLeft: x, // move the checkBox section x px to the right from the left side of the parent
-                    height: 80, // set the height of the checkBox section to 80px
-                    position: 'left', // place the checkBox section in the left side of the parent
-                    display: 'inline', // display the checkBox section as an inline element
                 }
+            },
+            styles: { // styles of the checkBox section layout
+                marginTop: y, // move the checkBox section y px down from the top of the parent
+                marginLeft: x, // move the checkBox section x px to the right from the left side of the parent
+                height: 80, // set the height of the checkBox section to 80px
+                position: 'left', // place the checkBox section in the left side of the parent
+                display: 'inline', // display the checkBox section as an inline element
             }
         });
     }
@@ -329,43 +325,41 @@ export class SettingsWindow extends Window {
         );
 
         this.addContent({ // add the radio buttons section to the window layout system
-            aniAliasing: { // id of the radio buttons section layout
-                content: { // object with the content of the layout ans its styles
-                    title: { // id of the title layout
-                        content: i18n.titleScreen.settings.antiAliasing, // title text that will be turned into a pixi Text
-                        styles: {// Styles of the text also describing pixi Text styles
-                            color: 'white', // color of the text
-                            fontFamily: 'debussy', // font family of the text
-                            fontSize: 60, // font size of the text
-                            position: 'leftCenter', // center pixi Text in the middle of parent (ribbon layout in this case)
-                            stroke: colors.hoverStroke, // text stroke color
-                            strokeThickness: 10, // text stroke thickness
-                            maxWidth: '83%', // set max width to 83% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
-                            maxHeight: '70%', // set max height to 70% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
-                            overflow: 'hidden', // hide text that is out of bounds (ribbon sprite size)
-                            marginTop: 7, // move 10px down from the top of the parent (ribbon)
-                            marginLeft: 50, // move 50px to the right from the left side of the parent (ribbon)
-                        }
-                    },
-                    switch: { // id of the switch layout
-                        content: new RadioGroup({ // create a new RadioGroup component (see RadioGroup.ts)
-                            items: aniAliasingSelect, // array of the radio buttons
-                            type: 'horizontal', // type of the radio buttons list alignment orientation
-                            elementsMargin: 40, // margin between the radio buttons
-                            selectedItem: 1, // initial selected radio button
-                        }),
-                        styles: { // styles of the switch layout
-                            marginTop: 70, // move the switch 70px down from the top of the parent
-                            width: 400, // set the width of the switch to 400px
-                            height: 70, // set the height of the switch to 70px
-                        }
+            content: { // object with the content of the layout ans its styles
+                title: { // id of the title layout
+                    content: i18n.titleScreen.settings.antiAliasing, // title text that will be turned into a pixi Text
+                    styles: {// Styles of the text also describing pixi Text styles
+                        color: 'white', // color of the text
+                        fontFamily: 'debussy', // font family of the text
+                        fontSize: 60, // font size of the text
+                        position: 'leftCenter', // center pixi Text in the middle of parent (ribbon layout in this case)
+                        stroke: colors.hoverStroke, // text stroke color
+                        strokeThickness: 10, // text stroke thickness
+                        maxWidth: '83%', // set max width to 83% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
+                        maxHeight: '70%', // set max height to 70% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
+                        overflow: 'hidden', // hide text that is out of bounds (ribbon sprite size)
+                        marginTop: 7, // move 10px down from the top of the parent (ribbon)
+                        marginLeft: 50, // move 50px to the right from the left side of the parent (ribbon)
                     }
                 },
-                styles: { // styles of the radio buttons section layout
-                    position: 'left', // place the radio buttons section in the left side of the parent
-                    marginTop: x, // move the radio buttons section x px down from the top of the parent
-                    marginLeft: y, // move the radio buttons section y px to the right from the left side of the parent
+                switch: { // id of the switch layout
+                    content: new RadioGroup({ // create a new RadioGroup component (see RadioGroup.ts)
+                        items: aniAliasingSelect, // array of the radio buttons
+                        type: 'horizontal', // type of the radio buttons list alignment orientation
+                        elementsMargin: 40, // margin between the radio buttons
+                        selectedItem: 1, // initial selected radio button
+                    }),
+                    styles: { // styles of the switch layout
+                        marginTop: 70, // move the switch 70px down from the top of the parent
+                        width: 400, // set the width of the switch to 400px
+                        height: 70, // set the height of the switch to 70px
+                    }
                 }
+            },
+            styles: { // styles of the radio buttons section layout
+                position: 'left', // place the radio buttons section in the left side of the parent
+                marginTop: x, // move the radio buttons section x px down from the top of the parent
+                marginLeft: y, // move the radio buttons section y px to the right from the left side of the parent
             }
         });
     }

@@ -56,15 +56,13 @@ export class InfoWindow extends Window { // extends Window class to get all the 
         const button = new Button(title, () => callback()); // create a button with the given text and callback
 
         this.addContent({ // add the button to the layout system of the Window
-            button: { // 'button' is the id of the layer
-                content: button, // layout content is a 'Button' instance that extends `Layout`
-                styles: { // styles is an object with all the styles that will be applied to the layout
-                    position: `bottom${position}`, // set position to bottomCenter of the parent size
-                    marginBottom: -80, // set bottom offset from the parent height
-                    width: 360, // set width so children position/sizes will be operated basing on it
-                    marginLeft: 80, // set offset from the parent left side
-                    marginRight: 80, // set offset from the parent right side
-                }
+            content: button, // layout content is a 'Button' instance that extends `Layout`
+            styles: { // styles is an object with all the styles that will be applied to the layout
+                position: `bottom${position}`, // set position to bottomCenter of the parent size
+                marginBottom: -80, // set bottom offset from the parent height
+                width: 360, // set width so children position/sizes will be operated basing on it
+                marginLeft: 80, // set offset from the parent left side
+                marginRight: 80, // set offset from the parent right side
             }
         });
     }
