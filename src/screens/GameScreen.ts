@@ -216,21 +216,25 @@ export class GameScreen extends AppScreen { // GameScreen extends AppScreen, whi
     /** Method that is called one every game tick (see Game.ts) */
     update() {
         // Update energy progress bar
-        if (this.energy.progress === 100) { // if the progress is 100
-            this.energyModificator = -1; // set modificator to move progress down
-        } else if (this.energy.progress === 0) { // if the progress is 0
-            this.energyModificator = 1; // set modificator to move progress up
-        }
+        if (this.energy) {
+            if (this.energy.progress === 100) { // if the progress is 100
+                this.energyModificator = -1; // set modificator to move progress down
+            } else if (this.energy.progress === 0) { // if the progress is 0
+                this.energyModificator = 1; // set modificator to move progress up
+            }
 
-        this.energy.progress += this.energyModificator; // update energy progress bar
+            this.energy.progress += this.energyModificator; // update energy progress bar
+        }
 
         // Update health progress bar
-        if (this.health.progress === 100) { // if the progress is 100
-            this.healthModificator = -1; // set modificator to move progress down
-        } else if (this.health.progress === 0) { // if the progress is 0
-            this.healthModificator = 1; // set modificator to move progress up
+        if (this.health) {
+            if (this.health.progress === 100) { // if the progress is 100
+                this.healthModificator = -1; // set modificator to move progress down
+            } else if (this.health.progress === 0) { // if the progress is 0
+                this.healthModificator = 1; // set modificator to move progress up
+            }
+            
+            this.health.progress += this.healthModificator; // update health progress bar
         }
-
-        this.health.progress += this.healthModificator; // update health progress bar
     }
 }
