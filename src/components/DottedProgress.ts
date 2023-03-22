@@ -1,5 +1,5 @@
 import { Content, Layout } from "@pixi/layout";
-import { SmallIconButton } from "./basic/SmallIconButton";
+import { SmallIconButton } from "./SmallIconButton";
 import { Sprite } from '@pixi/sprite';
 import { Button } from "@pixi/ui";
 
@@ -93,7 +93,6 @@ export class DottedProgress extends Layout {
             styles: { // styles is an object with all the styles that will be applied to the Layout
                 width: '77%', // width of the Layout, so it will be scaled down to always fit 77% of the parent width
                 height: '100%', // height of the Layout, so it will be scaled down to always fit 100% of the parent height
-                position: 'right', // position the Layout to the right of the parent
                 marginLeft: 187, // move the Layout to the right
             }
         });

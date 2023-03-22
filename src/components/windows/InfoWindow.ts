@@ -1,7 +1,7 @@
 import i18n from "../../config/i18n";
 import { Window } from "../basic/Window";
 import { ViewController } from "../../controllers/ViewController";
-import { CloseButton } from '../basic/CloseButton';
+import { CloseButton } from '../CloseButton';
 import { Button } from "../basic/Button";
 import { Sprite } from "@pixi/sprite";
 import { Text } from "@pixi/text";
@@ -56,15 +56,13 @@ export class InfoWindow extends Window { // extends Window class to get all the 
         const button = new Button(title, () => callback()); // create a button with the given text and callback
 
         this.addContent({ // add the button to the layout system of the Window
-            button: { // 'button' is the id of the layer
-                content: button, // layout content is a 'Button' instance that extends `Layout`
-                styles: { // styles is an object with all the styles that will be applied to the layout
-                    position: `bottom${position}`, // set position to bottomCenter of the parent size
-                    marginBottom: -80, // set bottom offset from the parent height
-                    width: 360, // set width so children position/sizes will be operated basing on it
-                    marginLeft: 80, // set offset from the parent left side
-                    marginRight: 80, // set offset from the parent right side
-                }
+            content: button, // layout content is a 'Button' instance that extends `Layout`
+            styles: { // styles is an object with all the styles that will be applied to the layout
+                position: `bottom${position}`, // set position to bottomCenter of the parent size
+                marginBottom: -80, // set bottom offset from the parent height
+                width: 360, // set width so children position/sizes will be operated basing on it
+                marginLeft: 80, // set offset from the parent left side
+                marginRight: 80, // set offset from the parent right side
             }
         });
     }
@@ -76,19 +74,12 @@ export class InfoWindow extends Window { // extends Window class to get all the 
         });
 
         this.addContent({ // add the button to the layout system of the Window
-            closeButton: { // 'closeButton' is the id of the layer
-                content: { // content of the layout that will be created with id `closeButton`
-                    content: closeButton, // layout content is a 'CloseButton' instance that extends `Layout`
-                    styles: { // styles is an object with all the styles that will be applied to the layout
-                        position: 'center', // set position to center of the parent size
-                    }
-                },
-                styles: { // styles is an object with all the styles that will be applied to the layout
-                    position: 'right', // set position to right of the parent size
-                    marginTop: 65, // set offset from the parent top side
-                    marginRight: -70, // set offset from the parent right side, stick it out a bit
-                    width: closeButton.width, // set width so children position/sizes will be operated basing on it
-                }
+            content: closeButton,
+            styles: { // styles is an object with all the styles that will be applied to the layout
+                position: 'right', // set position to right of the parent size
+                marginTop: 50, // move the button 65px down from the top of the parent layout
+                marginRight: -80, // move the button 70px left from the right of the parent layout
+                width: closeButton.width, // set width so children position/sizes will be operated basing on it
             }
         });
     }

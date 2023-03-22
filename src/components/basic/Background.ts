@@ -1,6 +1,6 @@
 import { Sprite } from '@pixi/sprite';
 import { Layout } from '@pixi/layout';
-import { PixiLogo } from './PixiLogo';
+import { PixiLogo } from '../PixiLogo';
 
 /* Layout based component for the background.
  * This is where all the layers of the background should be added and controlled. 

@@ -13,7 +13,7 @@ export class Window extends Layout {
         ribbonStyles?: Styles // styles of the ribbon
     }) {        
         super({ // Layout constructor accepts an object with all the config
-            id: `Window-${options.title}`, // id of the component, can be used to access it later
+            id: `Window-${options.title}`, // id of the component, can be used to access it laterS
             content: { // Content of the component
                 ribbon: { // Ribbon is a child of the Window
                     content: { // Content of the ribbon (text)
@@ -62,7 +62,6 @@ export class Window extends Layout {
     public createContent() {
         // override this method to add content to the window
     }
-
     
     /** Method is automatically called when Layout is shown. See Game.ts.
      * It is used to animate the window when it is shown.

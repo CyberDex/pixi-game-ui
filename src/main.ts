@@ -16,6 +16,10 @@ export const app = new Application<HTMLCanvasElement>({
     backgroundColor: colors.bg,
 });
 
+// Expose that app to the PixiJS Devtools (https://chrome.google.com/webstore/detail/pixijs-devtools/aamddddknhcagpehecnhphigffljadon)
+// so we can debug the pixi app layers
+(globalThis as any).__PIXI_APP__ = app;
+
 /** Set up a resize function for the app */
 function resize() {
     const windowWidth = window.innerWidth; // Get the width of the window

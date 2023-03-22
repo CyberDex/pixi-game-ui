@@ -1,6 +1,6 @@
 import i18n from "../../config/i18n";
 import { ScrollBox } from "@pixi/ui";
-import { SmallButton } from "../basic/SmallButton";
+import { SmallButton } from "../SmallButton";
 import { Window } from "../basic/Window";
 import { MenuButton } from "../MenuButton";
 import { game } from "../../Game";
@@ -156,17 +156,45 @@ export class LevelsWindow extends Window { // extend Window class
         this.addContent({ // add the buttons to the layout system of the screen
             bottomMenu: { // id of the layout
                 content: { // content is an object with all the elements that will be added to the layout
-                    homeButton, // `homeButton` is an ID of the layout and the content in this case
-                    infoButton, // `infoButton` is an ID of the layout  and the content in this case
-                    settingsButton, // `settingsButton` is an ID of the layout  and the content in this case
-                    playButton, // `playButton` is an ID of the layout  and the content in this case
+                    homeButton: {
+                        content: homeButton, // `homeButton` is an ID of the layout and the content in this case
+                        styles: {
+                            position: 'left', // set the position of the element to the top left of the parent (bottomMenu layout)
+                        }
+                    },
+                    infoButton: {
+                        content: infoButton, // `infoButton` is an ID of the layout  and the content in this case
+                        styles: {
+                            position: 'left', // set the position of the element to the top right of the parent (bottomMenu layout)
+                            // this is to compensate playButton anchor point (0.5)
+                            marginLeft: 190, // move the element a bit to the left from the left side of the parent
+                        }
+                    },
+                    settingsButton: { 
+                        content: settingsButton, // `settingsButton` is an ID of the layout  and the content in this case
+                        styles: {
+                            position: 'right', // set the position of the element to the top right of the parent (bottomMenu layout)
+                            // this is to compensate playButton anchor point (0.5)
+                            marginRight: 20, // move the element a bit to the right from the right side of the parent
+                        }
+                    },
+                    playButton: {
+                        content: playButton, // `playButton` is an ID of the layout  and the content in this case
+                        styles: {
+                            position: 'right', // set the position of the element to the top right of the parent (bottomMenu layout)
+                            // this is to compensate playButton anchor point (0.5)
+                            marginRight: -170, // move the element a bit to the right from the right side of the parent
+                        }
+                    },
                 },
                 styles: { // styles is an object with all the styles that will be applied to the layout
                     position: 'bottomCenter', // set the position of the layout to the bottom center of the parent (Window layout)
-                    marginBottom: -170, // move the layout up a bit from the bottom of the parent
-                    marginLeft: 75, // move the layout to the right a bit from the center of the parent
+                    marginBottom: -110, // move the layout up a bit from the bottom of the parent
+                    marginLeft: -10, // move the layout to the left a bit from the center of the parent
+                    width: '70%',
+                    height: 100,
                 }
-            }
+            },
         });
     }
 }

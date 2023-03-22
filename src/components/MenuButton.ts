@@ -1,5 +1,5 @@
 import { Layout } from '@pixi/layout';
-import { SmallIconButton } from './basic/SmallIconButton';
+import { SmallIconButton } from './SmallIconButton';
 import { Hint } from './Hint';
 
 /** Layout based component for the buttons with hint and counters,
@@ -10,8 +10,9 @@ export class MenuButton extends Layout {
         text: string, // text for the button hint
         onclick: () => void, // callback for the button press
         notifications: number = 0 // number of notifications to show on the button
-        ) { 
-        const button = new SmallIconButton(icon, onclick, notifications); // create the button component (see SmallIconButton.ts)
+    ) { 
+        
+        const button = new SmallIconButton(icon, onclick, notifications); // create the SmallIconButton instance (see SmallIconButton.ts)
         const buttonHint = new Hint(text); // create the hint component (see Hint.ts)
 
         buttonHint.hide(true); // hide the hint by default
@@ -21,7 +22,7 @@ export class MenuButton extends Layout {
 
         super({ // create the Layout component
             content: { // content config
-                button, // button component (in this case layout ID is 'button' and content is the button component instance)
+                button, // button component (in this case layout ID is 'button' and content is the SmallIconButton instance)
                 buttonHint: { // hint layout
                     content: buttonHint, // content is hint component instance
                     styles: { // styles for the hint layout

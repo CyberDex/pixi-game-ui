@@ -21,7 +21,7 @@ export class AppScreen extends Layout {
     }
 
     /** Method is automatically called on every update. See Game.ts */
-    public update(_delta: number) {
+    public onUpdate(_delta: number) {
         /* Override this method to update the screen */
     };
 
