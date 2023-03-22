@@ -6,6 +6,8 @@ It can be a starting point for your own learning and development journey with ga
 -   [PixiUI](https://github.com/pixijs/ui) commonly used UI components for PixiJS.
 -   [PixiLayout](https://github.com/pixijs/layout) library for arranging/resizing pixi rendered elements basing on css like configs. It is made for simple and fast implementation of the responsive user interfaces in your games.
 
+🎮 [Test result](https://cyberdex.github.io/pixi-game-ui/)
+
 # Prerequisites
 
 To run this project, you need to have `Node.js` and `npm` installed on your system.
