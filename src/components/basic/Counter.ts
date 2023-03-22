@@ -1,5 +1,5 @@
 import { Sprite } from "@pixi/sprite";
-import { colors } from '../config/colors';
+import { colors } from '../../config/colors';
 import { Container } from "@pixi/display";
 import { Text } from "@pixi/text";
 

@@ -1,6 +1,6 @@
 import { Sprite } from "@pixi/sprite";
 import { Text } from "@pixi/text";
-import { colors } from "../../config/colors";
+import { colors } from "../config/colors";
 import { FancyButton } from "@pixi/ui";
 
 /** Layout based component for the small button.

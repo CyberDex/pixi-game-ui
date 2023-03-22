@@ -1,6 +1,6 @@
 import i18n from "../../config/i18n";
 import { ScrollBox } from "@pixi/ui";
-import { SmallButton } from "../basic/SmallButton";
+import { SmallButton } from "../SmallButton";
 import { Window } from "../basic/Window";
 import { MenuButton } from "../MenuButton";
 import { game } from "../../Game";
@@ -156,17 +156,32 @@ export class LevelsWindow extends Window { // extend Window class
         this.addContent({ // add the buttons to the layout system of the screen
             bottomMenu: { // id of the layout
                 content: { // content is an object with all the elements that will be added to the layout
-                    homeButton, // `homeButton` is an ID of the layout and the content in this case
-                    infoButton, // `infoButton` is an ID of the layout  and the content in this case
-                    settingsButton, // `settingsButton` is an ID of the layout  and the content in this case
-                    playButton, // `playButton` is an ID of the layout  and the content in this case
+                    homeButton: {
+                        content: homeButton, // `homeButton` is an ID of the layout and the content in this case
+                        style: {
+                            width: homeButton.width, // set the width of the layout element
+                            height: homeButton.height, // set the height of the layout element
+                            background: 'blue',
+                            anchor: 1
+                        }
+                    },
+                    infoButton: {
+                    content: infoButton, // `infoButton` is an ID of the layout  and the content in this case
+                    },
+                    settingsButton: { 
+                        content: settingsButton, // `settingsButton` is an ID of the layout  and the content in this case
+                    },
+                    playButton: {
+                        content: playButton, // `playButton` is an ID of the layout  and the content in this case
+                    },
                 },
                 styles: { // styles is an object with all the styles that will be applied to the layout
                     position: 'bottomCenter', // set the position of the layout to the bottom center of the parent (Window layout)
                     marginBottom: -170, // move the layout up a bit from the bottom of the parent
                     marginLeft: 75, // move the layout to the right a bit from the center of the parent
+                    // background: 'red'
                 }
-            }
+            },
         });
     }
 }

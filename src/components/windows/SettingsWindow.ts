@@ -1,14 +1,14 @@
 import i18n from "../../config/i18n";
 import { Window } from "../basic/Window";
 import { ViewController } from "../../controllers/ViewController";
-import { CloseButton } from '../basic/CloseButton';
+import { CloseButton } from '../CloseButton';
 import { Button } from "../basic/Button";
 import { Sprite } from '@pixi/sprite';
-import { CheckBox } from "../basic/CheckBox";
+import { CheckBox } from "../CheckBox";
 import { RadioGroup } from "@pixi/ui";
-import { Switch } from "../basic/Switch";
+import { Switch } from "../Switch";
 import { colors } from "../../config/colors";
-import { Slider } from "../basic/Slider";
+import { Slider } from "../Slider";
 import { DottedProgress } from "../DottedProgress";
 
 /** Layout based component for the settings window. */
@@ -45,7 +45,7 @@ export class SettingsWindow extends Window {
 
         this.addSwitcher( // add GPU switcher to the window
             GPU, // text of the switcher
-            60, // x position of the switcher
+            -290, // x position of the switcher
             520, // y position of the switcher
             (checked) => console.log(GPU, checked) // callback function that will be called when the switcher is clicked
         );
@@ -100,19 +100,12 @@ export class SettingsWindow extends Window {
         const closeButton = new CloseButton(() => this.views.goBack()); // create a new close button, that will call the goBack method of the ViewController on click
 
         this.addContent({ // add the button to the window layout
-            closeButton: { // id of the button layout
-                content: { // object with the content of the layout ans its styles
-                    content: closeButton, // content of the layout is the button
-                    styles: { // styles of the layout
-                        position: 'center', // place the button in the center of the parent layout
-                    }
-                },
-                styles: { // styles of the layout
-                    position: 'right', // place the button in the right top corner of the parent layout
-                    marginTop: 65, // move the button 65px down from the top of the parent layout
-                    marginRight: -70, // move the button 70px left from the right of the parent layout
-                    width: closeButton.width, // set the width of the button layout to the width of the button
-                }
+            content: closeButton, // content of the layout is the button
+            styles: { // styles of the layout
+                position: 'right', // place the button in the right top corner of the parent layout
+                marginTop: 50, // move the button 65px down from the top of the parent layout
+                marginRight: -80, // move the button 70px left from the right of the parent layout
+                width: closeButton.width, // set the width of the button layout to the width of the button
             }
         });
     }
@@ -120,81 +113,79 @@ export class SettingsWindow extends Window {
     /** Creates a switcher and adds it to the window */
     private addGFX() {
         this.addContent({ // add the switcher to the window layout system
-            gfx: { // id of the switcher layout
-                content: { // object with the content of the layout ans its styles
-                    title: { // Content of the ribbon (text)
-                        content: i18n.titleScreen.settings.GFX, // string given as a parameter
-                        styles: { // Styles of the text
-                            color: 'white', // color of the text
-                            fontFamily: 'debussy', // font family of the text
-                            fontSize: 60, // font size of the text
-                            position: 'leftCenter', // center pixi Text in the middle of parent
-                            stroke: colors.hoverStroke, // text stroke color
-                            strokeThickness: 10, // text stroke thickness
-                            maxWidth: '83%', // set max width to 83% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
-                            maxHeight: '70%', // set max height to 70% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
-                            overflow: 'hidden', // hide text that is out of bounds (ribbon sprite size)
-                            marginLeft: 30, // move 20px to the right from the left side of the parent (ribbon)
-                            marginTop: 7, // move 10px down from the top of the parent (ribbon)
-                        },
+            content: { // object with the content of the layout ans its styles
+                title: { // Content of the ribbon (text)
+                    content: i18n.titleScreen.settings.GFX, // string given as a parameter
+                    styles: { // Styles of the text
+                        color: 'white', // color of the text
+                        fontFamily: 'debussy', // font family of the text
+                        fontSize: 60, // font size of the text
+                        position: 'leftCenter', // center pixi Text in the middle of parent
+                        stroke: colors.hoverStroke, // text stroke color
+                        strokeThickness: 10, // text stroke thickness
+                        maxWidth: '83%', // set max width to 83% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
+                        maxHeight: '70%', // set max height to 70% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
+                        overflow: 'hidden', // hide text that is out of bounds (ribbon sprite size)
+                        marginLeft: 30, // move 20px to the right from the left side of the parent (ribbon)
+                        marginTop: 7, // move 10px down from the top of the parent (ribbon)
                     },
-                    slider: { // id of the slider layout
-                        content: { // object with the content of the slider layout ans its styles
-                            low: { // Content of the low label (text)
-                                content: i18n.titleScreen.settings.low, // string given as a parameter, thar will be turned into a pixi Text
-                                styles: { // Styles of the text layout, that will be applied to the pixi Text style too
-                                    color: 'white', // color of the text
-                                    fontFamily: 'debussy', // font family of the text
-                                    fontSize: 30, // font size of the text
-                                }
-                            },
-                            medium: { // Content of the medium label (text)
-                                content: i18n.titleScreen.settings.medium, // string given as a parameter, thar will be turned into a pixi Text
-                                styles: { // Styles of the text layout, that will be applied to the pixi Text style too
-                                    color: 'white', // color of the text
-                                    fontFamily: 'debussy', // font family of the text
-                                    fontSize: 30, // font size of the text
-                                    position: 'centerTop', // center pixi Text in the middle of parent
-                                }
-                            },
-                            high: { // Content of the high label (text)
-                                content: i18n.titleScreen.settings.high, // string given as a parameter, thar will be turned into a pixi Text
-                                styles: { // Styles of the text layout, that will be applied to the pixi Text style too
-                                    color: 'white', // color of the text
-                                    fontFamily: 'debussy', // font family of the text
-                                    fontSize: 30, // font size of the text
-                                    position: 'rightTop', // center pixi Text in the right top corner of the parent
-                                }
-                            },
-                            slider: { // id of the slider layout
-                                content: new Slider({ // create a new slider component
-                                    min: 1, // minimum value of the slider
-                                    max: 3, // maximum value of the slider
-                                    value: 2, // initial value of the slider
-                                    onChange: (value) => { // callback function that will be called when the slider value changes (after the user releases the mouse button)
-                                        console.log(`${i18n.titleScreen.settings.GFX} ${Math.round(value)}`); // log to the console
-                                    }
-                                }),
-                                styles: { // styles of the slider layout
-                                    position: 'centerBottom', // place the slider in the center bottom of the parent
-                                    marginBottom: -40 // move the slider 40px up from the bottom of the parent
-                                }
+                },
+                slider: { // id of the slider layout
+                    content: { // object with the content of the slider layout ans its styles
+                        low: { // Content of the low label (text)
+                            content: i18n.titleScreen.settings.low, // string given as a parameter, thar will be turned into a pixi Text
+                            styles: { // Styles of the text layout, that will be applied to the pixi Text style too
+                                color: 'white', // color of the text
+                                fontFamily: 'debussy', // font family of the text
+                                fontSize: 30, // font size of the text
                             }
                         },
-                        styles: { // styles of the slider layout
-                            width: '70%', // set the width of the slider layout to 70% of the parent
-                            height: '60%', // set the height of the slider layout to 60% of the parent
-                            position: 'topRight', // place the slider in the top right corner of the parent
-                            marginRight: 30, // move the slider 30px to the left from the right side of the parent
-                            marginTop: 20, // move the slider 20px down from the top of the parent
+                        medium: { // Content of the medium label (text)
+                            content: i18n.titleScreen.settings.medium, // string given as a parameter, thar will be turned into a pixi Text
+                            styles: { // Styles of the text layout, that will be applied to the pixi Text style too
+                                color: 'white', // color of the text
+                                fontFamily: 'debussy', // font family of the text
+                                fontSize: 30, // font size of the text
+                                position: 'centerTop', // center pixi Text in the middle of parent
+                            }
+                        },
+                        high: { // Content of the high label (text)
+                            content: i18n.titleScreen.settings.high, // string given as a parameter, thar will be turned into a pixi Text
+                            styles: { // Styles of the text layout, that will be applied to the pixi Text style too
+                                color: 'white', // color of the text
+                                fontFamily: 'debussy', // font family of the text
+                                fontSize: 30, // font size of the text
+                                position: 'rightTop', // center pixi Text in the right top corner of the parent
+                            }
+                        },
+                        slider: { // id of the slider layout
+                            content: new Slider({ // create a new slider component
+                                min: 1, // minimum value of the slider
+                                max: 3, // maximum value of the slider
+                                value: 2, // initial value of the slider
+                                onChange: (value) => { // callback function that will be called when the slider value changes (after the user releases the mouse button)
+                                    console.log(`${i18n.titleScreen.settings.GFX} ${Math.round(value)}`); // log to the console
+                                }
+                            }),
+                            styles: { // styles of the slider layout
+                                position: 'centerBottom', // place the slider in the center bottom of the parent
+                                marginBottom: -40 // move the slider 40px up from the bottom of the parent
+                            }
                         }
+                    },
+                    styles: { // styles of the slider layout
+                        width: '70%', // set the width of the slider layout to 70% of the parent
+                        height: '60%', // set the height of the slider layout to 60% of the parent
+                        position: 'topRight', // place the slider in the top right corner of the parent
+                        marginRight: 30, // move the slider 30px to the left from the right side of the parent
+                        marginTop: 20, // move the slider 20px down from the top of the parent
                     }
-                },
-                styles: {
-                    marginTop: 120, // move the switcher 120px down from the top of the parent
-                    position: 'centerTop', // place the switcher in the center top of the parent
-                    background: Sprite.from('Substrate') // set the Substrate sprite as a background of the switcher
                 }
+            },
+            styles: {
+                marginTop: 120, // move the switcher 120px down from the top of the parent
+                position: 'centerTop', // place the switcher in the center top of the parent
+                background: Sprite.from('Substrate') // set the Substrate sprite as a background of the switcher
             }
         });
     }
@@ -202,39 +193,40 @@ export class SettingsWindow extends Window {
     /** Created a volume control section. */
     private addBGM() {
         this.addContent({ // add the volume control section to the window layout system
-            bgm: { // id of the volume control section layout
-                content: { // object with the content of the layout ans its styles
-                    title: { // id of the section text layout
-                        content: i18n.titleScreen.settings.BGM, // string given as a parameter that will be turned into a pixi Text
-                        styles: { // Styles of the text layout, that will be applied to the pixi Text style too
-                            color: 'white', // color of the text
-                            fontFamily: 'debussy', // font family of the text
-                            fontSize: 60, // font size of the text
-                            position: 'leftCenter', // center pixi Text in the middle of parent (ribbon layout in this case)
-                            stroke: colors.hoverStroke, // text stroke color
-                            strokeThickness: 10, // text stroke thickness
-                            maxWidth: '83%', // set max width to 83% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
-                            maxHeight: '70%', // set max height to 70% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
-                            overflow: 'hidden', // hide text that is out of bounds (ribbon sprite size)
-                            marginLeft: 30, // move 20px to the right from the left side of the parent (ribbon)
-                            marginTop: 7, // move 10px down from the top of the parent (ribbon)
-                        },
+            content: { // object with the content of the layout ans its styles
+                title: { // id of the section text layout
+                    content: i18n.titleScreen.settings.BGM, // string given as a parameter that will be turned into a pixi Text
+                    styles: { // Styles of the text layout, that will be applied to the pixi Text style too
+                        color: 'white', // color of the text
+                        fontFamily: 'debussy', // font family of the text
+                        fontSize: 60, // font size of the text
+                        position: 'leftCenter', // center pixi Text in the middle of parent (ribbon layout in this case)
+                        stroke: colors.hoverStroke, // text stroke color
+                        strokeThickness: 10, // text stroke thickness
+                        maxWidth: '83%', // set max width to 83% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
+                        maxHeight: '70%', // set max height to 70% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
+                        overflow: 'hidden', // hide text that is out of bounds (ribbon sprite size)
+                        marginLeft: 30, // move 20px to the right from the left side of the parent (ribbon)
+                        marginTop: 7, // move 10px down from the top of the parent (ribbon)
                     },
-                    soundControl: { // id of the sound control layout
-                        content: new DottedProgress({ // create a new DottedProgress component (see DottedProgress.ts)
-                            steps: 6, // number of steps in the progress bar
-                            value: 3, // initial value of the progress bar
-                            onChange: (value) => { // callback function that will be called when the progress bar value changes
-                                console.log(`${i18n.titleScreen.settings.BGM} ${value}`); // log to the console
-                            }
-                        })
-                    }
                 },
-                styles: { // styles of the volume control section layout
-                    marginTop: 275, // move the volume control section 275px down from the top of the parent
-                    position: 'centerTop', // place the volume control section in the center top of the parent
-                    background: Sprite.from('Substrate') // set the Substrate sprite as a background of the volume control section
+                soundControl: { // id of the sound control layout
+                    content: new DottedProgress({ // create a new DottedProgress component (see DottedProgress.ts)
+                        steps: 6, // number of steps in the progress bar
+                        value: 3, // initial value of the progress bar
+                        onChange: (value) => { // callback function that will be called when the progress bar value changes
+                            console.log(`${i18n.titleScreen.settings.BGM} ${value}`); // log to the console
+                        }
+                    }),
+                    styles: { // styles of the sound control layout
+                        position: 'rightCenter', // place the sound control in the right center of the parent (ribbon layout in this case)
+                    }
                 }
+            },
+            styles: { // styles of the volume control section layout
+                marginTop: 275, // move the volume control section 275px down from the top of the parent
+                position: 'centerTop', // place the volume control section in the center top of the parent
+                background: Sprite.from('Substrate') // set the Substrate sprite as a background of the volume control section
             }
         });
     }
@@ -325,41 +317,43 @@ export class SettingsWindow extends Window {
         );
 
         this.addContent({ // add the radio buttons section to the window layout system
-            content: { // object with the content of the layout ans its styles
-                title: { // id of the title layout
-                    content: i18n.titleScreen.settings.antiAliasing, // title text that will be turned into a pixi Text
-                    styles: {// Styles of the text also describing pixi Text styles
-                        color: 'white', // color of the text
-                        fontFamily: 'debussy', // font family of the text
-                        fontSize: 60, // font size of the text
-                        position: 'leftCenter', // center pixi Text in the middle of parent (ribbon layout in this case)
-                        stroke: colors.hoverStroke, // text stroke color
-                        strokeThickness: 10, // text stroke thickness
-                        maxWidth: '83%', // set max width to 83% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
-                        maxHeight: '70%', // set max height to 70% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
-                        overflow: 'hidden', // hide text that is out of bounds (ribbon sprite size)
-                        marginTop: 7, // move 10px down from the top of the parent (ribbon)
-                        marginLeft: 50, // move 50px to the right from the left side of the parent (ribbon)
+            aniAliasing: { // id of the radio buttons section layout
+                content: { // object with the content of the layout ans its styles
+                    title: { // id of the title layout
+                        content: i18n.titleScreen.settings.antiAliasing, // title text that will be turned into a pixi Text
+                        styles: {// Styles of the text also describing pixi Text styles
+                            color: 'white', // color of the text
+                            fontFamily: 'debussy', // font family of the text
+                            fontSize: 60, // font size of the text
+                            position: 'leftCenter', // center pixi Text in the middle of parent (ribbon layout in this case)
+                            stroke: colors.hoverStroke, // text stroke color
+                            strokeThickness: 10, // text stroke thickness
+                            maxWidth: '83%', // set max width to 83% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
+                            maxHeight: '70%', // set max height to 70% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
+                            overflow: 'hidden', // hide text that is out of bounds (ribbon sprite size)
+                            marginTop: 7, // move 10px down from the top of the parent (ribbon)
+                            marginLeft: 50, // move 50px to the right from the left side of the parent (ribbon)
+                        }
+                    },
+                    switch: { // id of the switch layout
+                        content: new RadioGroup({ // create a new RadioGroup component (see RadioGroup.ts)
+                            items: aniAliasingSelect, // array of the radio buttons
+                            type: 'horizontal', // type of the radio buttons list alignment orientation
+                            elementsMargin: 40, // margin between the radio buttons
+                            selectedItem: 1, // initial selected radio button
+                        }),
+                        styles: { // styles of the switch layout
+                            marginTop: 70, // move the switch 70px down from the top of the parent
+                            width: 400, // set the width of the switch to 400px
+                            height: 70, // set the height of the switch to 70px
+                        }
                     }
                 },
-                switch: { // id of the switch layout
-                    content: new RadioGroup({ // create a new RadioGroup component (see RadioGroup.ts)
-                        items: aniAliasingSelect, // array of the radio buttons
-                        type: 'horizontal', // type of the radio buttons list alignment orientation
-                        elementsMargin: 40, // margin between the radio buttons
-                        selectedItem: 1, // initial selected radio button
-                    }),
-                    styles: { // styles of the switch layout
-                        marginTop: 70, // move the switch 70px down from the top of the parent
-                        width: 400, // set the width of the switch to 400px
-                        height: 70, // set the height of the switch to 70px
-                    }
+                styles: { // styles of the radio buttons section layout
+                    position: 'left', // place the radio buttons section in the left side of the parent
+                    marginTop: x, // move the radio buttons section x px down from the top of the parent
+                    marginLeft: y, // move the radio buttons section y px to the right from the left side of the parent
                 }
-            },
-            styles: { // styles of the radio buttons section layout
-                position: 'left', // place the radio buttons section in the left side of the parent
-                marginTop: x, // move the radio buttons section x px down from the top of the parent
-                marginLeft: y, // move the radio buttons section y px to the right from the left side of the parent
             }
         });
     }

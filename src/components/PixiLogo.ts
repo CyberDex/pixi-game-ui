@@ -1,5 +1,5 @@
 import { Sprite } from "@pixi/sprite"
-import i18n from "../../config/i18n"
+import i18n from "../config/i18n"
 import { LayoutOptions } from "@pixi/layout";
 
 /* Layout based component for the pixi logo. 

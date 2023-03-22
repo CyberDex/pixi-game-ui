@@ -21,8 +21,10 @@ export class TitleScreen extends AppScreen { // extends AppScreen that extends L
 
     constructor(options?: SceneData) {
         super('TitleScreen'); // Creates Layout with id 'TitleScreen'
-
-        game.addBG(); // add game background, handled by Game class to be shown on all screens
+        
+        // add game background, handled by Game class to be shown on all screens
+        // we add it here as we have to wait for it tot be preloaded
+        game.addBG(); 
 
         this.views = new ViewController(); // create view controller
 

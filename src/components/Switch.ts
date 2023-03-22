@@ -1,7 +1,7 @@
 import { CheckBox as BasicCheckBox } from '@pixi/ui';
 import { Sprite } from '@pixi/sprite';
 import { Text } from '@pixi/text';
-import { colors } from '../../config/colors';
+import { colors } from '../config/colors';
 
 /** Extends a BasicCheckBox class and apply config to it, 
  * so that instance can be used without need to config it. 
@@ -11,7 +11,8 @@ export class Switch extends BasicCheckBox {
         text: string, // text that will be displayed on the checkbox
         checked:boolean, // initial checkbox state
         callback?: (checked: boolean) => void // callback function that will be called when checkbox state changes
-        ) {
+    ) {
+        
         super({
             style: { // style is an object with checkbox assets and text styles
                 checked: createCheckBox(true), // sprite(Container), that shows when checkbox is checked

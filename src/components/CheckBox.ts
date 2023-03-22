@@ -1,7 +1,7 @@
 import { CheckBox as BasicCheckBox } from '@pixi/ui';
 import { Sprite } from '@pixi/sprite';
 import { TextStyle } from '@pixi/text';
-import { colors } from '../../config/colors';
+import { colors } from '../config/colors';
 
 /** Extends a BasicCheckBox class and apply config to it, 
  * so that instance can be used without need to config it. */

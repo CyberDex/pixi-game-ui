@@ -57,8 +57,8 @@ class Game { // We DO NOT export this class, as we want to have only one instanc
             screen.resize(this._w, this._h); // Trigger a first resize
         }
 
-        if (screen.update) { // Add update function if it exists
-            app.ticker.add(screen.update, screen); // Add update function to the ticker
+        if (screen.onUpdate) { // Add update function if it exists
+            app.ticker.add(screen.onUpdate, screen); // Add update function to the ticker
         }
 
         if (screen.show) { // Show the new screen if it has a show method
@@ -76,8 +76,8 @@ class Game { // We DO NOT export this class, as we want to have only one instanc
             window.removeEventListener('resize', this.currentScreenResize); // Remove resize listener
         }
 
-        if (screen.update) { // Unlink update function if method is available
-            app.ticker.remove(screen.update, screen); // Remove update function from the ticker
+        if (screen.onUpdate) { // Unlink update function if method is available
+            app.ticker.remove(screen.onUpdate, screen); // Remove update function from the ticker
         }
 
         if (screen.parent) { // Remove screen from its parent (usually app.stage, if not changed)

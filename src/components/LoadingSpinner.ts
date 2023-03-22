@@ -1,6 +1,6 @@
 import { Sprite } from "@pixi/sprite"
-import { colors } from "../../config/colors";
-import i18n from "../../config/i18n"
+import { colors } from "../config/colors";
+import i18n from "../config/i18n"
 import { Layout } from '@pixi/layout';
 
 /** Layout based component for the loading spinner. */
@@ -16,15 +16,17 @@ export class LoadingSpinner extends Layout {
                 spinner: { // spinner is the id of the layer
                     content: spinnerSprite, // layout content is a sprite
                     styles: { // styles is an object with all the styles that will be applied to the layer
-                        position: 'center', // center Layout in the middle of parent
-                        anchor: 0.5, // we gonna spin the spinner around it's center
+                        // we need this offset as spinnerSprite anchor is set to 0.5
                         marginLeft: spinnerSprite.width / 2, // set margin left to half of the width of the sprite
                         marginTop: spinnerSprite.height / 2, // set margin top to half of the height of the sprite
+                        // this is to compensate size Sfor the offset of the anchor
+                        marginRight: -spinnerSprite.width / 2, // set margin right to negative half of the width of the sprite
                     }
                 },
                 loadingText: { // loadingText is the id of the text layer
                     content: i18n.loadingScreen.loading, // layout content is a string (this will be converted to pixi Text)
                     styles: { // styles is an object with all the styles that will be applied to the layer
+                        // we set absolute position of the text, so it will not affect the layout size
                         position: 'center', // center Layout in the middle of parent
                         color: colors.text, // color of the text
                         marginTop: 100, // set margin top to 100px
