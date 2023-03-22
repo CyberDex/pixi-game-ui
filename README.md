@@ -1,6 +1,6 @@
 [<img width="1087" alt="Screenshot 2023-03-22 at 21 32 25" src="https://user-images.githubusercontent.com/11766115/227016854-3b4b39d9-4fa7-4c64-89e2-f99b63edd8d6.png">](https://cyberdex.github.io/pixi-game-ui/)
 
-<a href="https://cyberdex.github.io/pixi-game-ui/" target="_blank">🎮 Test result</a>
+### 🎮 <a href="https://cyberdex.github.io/pixi-game-ui/" target="_blank">Test Pixi Game UI</a> 
 
 This is an educational project, that implements a game UI using PixiJS and its libraries PixiUI and PixiLayout. 
 
@@ -8,9 +8,11 @@ Codebase is fully commented, just follow the comments to learn from it.
 
 It can be a starting point for your own learning and development journey with game development using PixiJS together with PixiUI and PixiLayout.
 
--   [<img src = "https://user-images.githubusercontent.com/11766115/227019823-59e219a9-40b8-4478-a6cb-dde04a3f91eb.png" height='25' />](https://github.com/pixijs/pixijs) - a rendering library built for the web.
--   [<img src = "https://user-images.githubusercontent.com/11766115/227020431-e8a8e4ee-fc8d-4f2d-a292-84cdcf5a2912.png" height='25' />](https://github.com/pixijs/ui) - commonly used UI components for PixiJS.
--   [<img src = "https://user-images.githubusercontent.com/11766115/227020528-89d0ec22-be97-4650-a7de-37834de23c1d.png" height='25' />](https://github.com/pixijs/layout) - library for arranging/resizing pixi-rendered elements based on css like configs. It is made for simple and fast implementation of responsive user interfaces in your games.
+&nbsp;&nbsp;&nbsp;[<img src = "https://user-images.githubusercontent.com/11766115/227019823-59e219a9-40b8-4478-a6cb-dde04a3f91eb.png" height='25' />](https://github.com/pixijs/pixijs) - a rendering library built for the web.  
+  
+&nbsp;&nbsp;&nbsp;[<img src = "https://user-images.githubusercontent.com/11766115/227020431-e8a8e4ee-fc8d-4f2d-a292-84cdcf5a2912.png" height='25' />](https://github.com/pixijs/ui) - commonly used UI components aplications based on PixiJS.  
+  
+&nbsp;&nbsp;&nbsp;[<img src = "https://user-images.githubusercontent.com/11766115/227020528-89d0ec22-be97-4650-a7de-37834de23c1d.png" height='25' />](https://github.com/pixijs/layout) - library for for simple and fast implementation of responsive user interfaces using PixiPS.
 
 
 # Prerequisites
