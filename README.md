@@ -1,3 +1,6 @@
+<img width="1087" alt="Screenshot 2023-03-22 at 21 32 25" src="https://user-images.githubusercontent.com/11766115/227016854-3b4b39d9-4fa7-4c64-89e2-f99b63edd8d6.png">
+
+
 This is an educational project, that implements a game UI using PixiJS and its libraries PixiUI and PixiLayout. 
 
 Codebase is fully commented, just follow the comments to learn from it.
