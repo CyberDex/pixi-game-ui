@@ -1,10 +1,12 @@
-This is an educational project, that implements a game UI using PixiJS and it's libraries PixiUI and PixiLayout. 
+This is an educational project, that implements a game UI using PixiJS and its libraries PixiUI and PixiLayout. 
+
+Codebase is fully commented, just follow the comments to learn from it.
 
 It can be a starting point for your own learning and development journey with game development using PixiJS together with PixiUI and PixiLayout.
 
 -   [PixiJS](https://github.com/pixijs/pixijs) a rendering library built for the web.
 -   [PixiUI](https://github.com/pixijs/ui) commonly used UI components for PixiJS.
--   [PixiLayout](https://github.com/pixijs/layout) library for arranging/resizing pixi rendered elements basing on css like configs. It is made for simple and fast implementation of the responsive user interfaces in your games.
+-   [PixiLayout](https://github.com/pixijs/layout) library for arranging/resizing pixi-rendered elements based on css like configs. It is made for simple and fast implementation of responsive user interfaces in your games.
 
 🎮 [Test result](https://cyberdex.github.io/pixi-game-ui/)
 
@@ -38,7 +40,7 @@ npm run build
 # Usage
 
 Feel free to use this project as a reference to develop your own game. 
-Use the code comments to understand how it works and experiment by making changes to the code and see how it affects the UI. 
+Use the code comments to understand how it works and experiment by making changes to the code and seeing how it affects the UI. 
 
 # Contributions
 
@@ -52,7 +54,7 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 
 Assets used in this project are from the following sources:
 https://graphicriver.net/item/cartoon-games-gui-pack-9/5644945
-To use them in your own projects, you need to purchase a license from the original author.
+To use them in your projects, you need to purchase a license from the original author.
 
 ---
 
