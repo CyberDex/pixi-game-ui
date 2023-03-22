@@ -158,28 +158,41 @@ export class LevelsWindow extends Window { // extend Window class
                 content: { // content is an object with all the elements that will be added to the layout
                     homeButton: {
                         content: homeButton, // `homeButton` is an ID of the layout and the content in this case
-                        style: {
-                            width: homeButton.width, // set the width of the layout element
-                            height: homeButton.height, // set the height of the layout element
-                            background: 'blue',
-                            anchor: 1
+                        styles: {
+                            position: 'left', // set the position of the element to the top left of the parent (bottomMenu layout)
                         }
                     },
                     infoButton: {
-                    content: infoButton, // `infoButton` is an ID of the layout  and the content in this case
+                        content: infoButton, // `infoButton` is an ID of the layout  and the content in this case
+                        styles: {
+                            position: 'left', // set the position of the element to the top right of the parent (bottomMenu layout)
+                            // this is to compensate playButton anchor point (0.5)
+                            marginLeft: 190, // move the element a bit to the left from the left side of the parent
+                        }
                     },
                     settingsButton: { 
                         content: settingsButton, // `settingsButton` is an ID of the layout  and the content in this case
+                        styles: {
+                            position: 'right', // set the position of the element to the top right of the parent (bottomMenu layout)
+                            // this is to compensate playButton anchor point (0.5)
+                            marginRight: 20, // move the element a bit to the right from the right side of the parent
+                        }
                     },
                     playButton: {
                         content: playButton, // `playButton` is an ID of the layout  and the content in this case
+                        styles: {
+                            position: 'right', // set the position of the element to the top right of the parent (bottomMenu layout)
+                            // this is to compensate playButton anchor point (0.5)
+                            marginRight: -170, // move the element a bit to the right from the right side of the parent
+                        }
                     },
                 },
                 styles: { // styles is an object with all the styles that will be applied to the layout
                     position: 'bottomCenter', // set the position of the layout to the bottom center of the parent (Window layout)
-                    marginBottom: -170, // move the layout up a bit from the bottom of the parent
-                    marginLeft: 75, // move the layout to the right a bit from the center of the parent
-                    // background: 'red'
+                    marginBottom: -110, // move the layout up a bit from the bottom of the parent
+                    marginLeft: -10, // move the layout to the left a bit from the center of the parent
+                    width: '70%',
+                    height: 100,
                 }
             },
         });
