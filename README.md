@@ -1,7 +1,6 @@
-[<img width="1087" alt="Screenshot 2023-03-22 at 21 32 25" src="https://user-images.githubusercontent.com/11766115/227016854-3b4b39d9-4fa7-4c64-89e2-f99b63edd8d6.png">](https://cyberdex.github.io/pixi-game-ui/)
+# PixiJS Game UI
 
-### 🎮 <a href="https://cyberdex.github.io/pixi-game-ui/" target="_blank">Test Pixi Game UI</a> 
-
+[<img src = "https://user-images.githubusercontent.com/11766115/227017000-9b0b0b8c-4f8e-4b0e-9b0e-8b2b2b2b2b2b.png" height='25' />](https://cyberdex.github.io/pixi-game-ui/) - a game UI built using PixiJS and its libraries PixiUI and PixiLayout.
 This is an educational project, that implements a game UI using PixiJS and its libraries PixiUI and PixiLayout. 
 
 Codebase is fully commented, just follow the comments to learn from it.
