@@ -26,8 +26,9 @@ export class MenuButton extends Layout {
                 buttonHint: { // hint layout
                     content: buttonHint, // content is hint component instance
                     styles: { // styles for the hint layout
+                        height: 1, // set the height of the hint layout
                         position: 'center', // center the hint
-                        marginTop: -90, // move the hint up
+                        marginTop: -160, // move the hint up
                         marginLeft: 10, // move the hint to the right
                     }
                 }
