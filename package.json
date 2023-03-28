@@ -22,7 +22,7 @@
         "@pixi/display": "^7.2.3",
         "@pixi/events": "^7.2.3",
         "@pixi/graphics": "^7.2.3",
-        "@pixi/layout": "^0.1.5",
+        "@pixi/layout": "^0.1.6",
         "@pixi/sprite": "^7.2.3",
         "@pixi/text": "^7.2.3",
         "@pixi/ui": "^0.6.2",
