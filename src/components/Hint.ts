@@ -24,11 +24,11 @@ export class Hint extends Layout {
                     styles: { // styles is an object with all the styles that will be applied to the layer
                         position: type === 'down' ? 'center' : 'centerTop', // center Layout in the middle ot the top of parent basing on the type
                         color: colors.text, // color of the text
-                        fontSize: 35, // font size of the text
+                        fontSize: 45, // font size of the text
                         fontFamily: defaultFont, // font family of the text
                         stroke: colors.disabledStroke, // stroke color of the text
-                        strokeThickness: 2, // stroke thickness of the text
-                        marginTop: 18, // set margin top to 18px
+                        strokeThickness: 4, // stroke thickness of the text
+                        marginTop: 12, // set margin top to 18px
                     }
                 }
             },

@@ -24,7 +24,7 @@ export class SmallButton extends FancyButton {
                     fontSize: 75, // set text font size
                     fontFamily: defaultFont, // set text font family
                     stroke: colors.disabledStroke, // set text stroke color
-                    strokeThickness: 8, // set text stroke thickness
+                    strokeThickness: 6, // set text stroke thickness
                 });
 
         super({ // FancyButton constructor accepts an object with all the config
@@ -35,6 +35,7 @@ export class SmallButton extends FancyButton {
             text: textElement, // this is a text that will be displayed on the button
             icon, // this is an icon that will be displayed on the button
             iconOffset: { y: -10 }, // this is an offset for the icon
+            textOffset: { y: -7 }, // this is an offset for the text
             padding: 11, // padding between button edges and text, text will be scaled to fit the button size
             animations: { // animations for button states
                 hover: { // animation for hover state

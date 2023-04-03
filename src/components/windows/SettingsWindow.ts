@@ -312,7 +312,7 @@ export class SettingsWindow extends Window {
                 },
                 textStyle: { // styles of the text
                     fontSize: 30, // font size of the text
-                    strokeThickness: 5, // text stroke thickness
+                    strokeThickness: 3, // text stroke thickness
                 },
             })
         );

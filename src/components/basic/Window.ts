@@ -27,7 +27,7 @@ export class Window extends Layout {
                             position: 'center', // center pixi Text in the middle of parent (ribbon layout in this case)
                             marginTop: -6, // move 6px up from the top of the parent
                             stroke: colors.disabledStroke, // text stroke color
-                            strokeThickness: 5, // text stroke thickness
+                            strokeThickness: 8, // text stroke thickness
                             maxWidth: '83%', // set max width to 83% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
                             maxHeight: '70%', // set max height to 70% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
                             overflow: 'hidden', // hide text that is out of bounds (ribbon sprite size)

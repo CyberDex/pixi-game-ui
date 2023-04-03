@@ -14,10 +14,10 @@ export class Button extends Layout {
             disabledView: `Button-disabled`, // this is a key to the texture atlas for disabled button state view
             text: new Text(text, { // this is a text that will be displayed on the button
                 fill: colors.text, // text color
-                fontSize: 40, // text size
+                fontSize: 55, // text size
                 fontFamily: defaultFont, // text font
                 stroke: colors.disabledStroke, // text stroke color TODO: change this on button state change
-                strokeThickness: 4, // text stroke thickness
+                strokeThickness: 8, // text stroke thickness
             }),
             textOffset: { y: -5 }, // offset of the text from the center of the button
             padding: 11, // padding between button edges and text, text will be scaled to fit the button size
