@@ -1,1 +1,1 @@
-export const defaultFont = 'Arial';
+export const defaultFont = 'Titan One';
