@@ -2,6 +2,7 @@ import { Sprite } from "@pixi/sprite";
 import { Text } from "@pixi/text";
 import { colors } from "../config/colors";
 import { FancyButton } from "@pixi/ui";
+import { defaultFont } from "../config/texts";
 
 /** Layout based component for the small button.
  * It applies all the configs to the FancyButton component, 
@@ -21,7 +22,7 @@ export class SmallButton extends FancyButton {
                 : new Text(text, { // create a text element
                     fill: colors.text, // set text color
                     fontSize: 75, // set text font size
-                    fontFamily: 'debussy', // set text font family
+                    fontFamily: defaultFont, // set text font family
                     stroke: colors.disabledStroke, // set text stroke color
                     strokeThickness: 8, // set text stroke thickness
                 });

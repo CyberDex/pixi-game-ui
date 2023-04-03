@@ -10,6 +10,7 @@ import { MaskedFrame, ProgressBar } from '@pixi/ui';
 import { Hint } from '../components/Hint';
 import { CloseButton } from '../components/CloseButton';
 import { Layout } from '@pixi/layout';
+import { defaultFont } from '../config/texts';
 
 /** Game screen. 
  * To be used to show all the game play and UI.
@@ -49,7 +50,7 @@ export class GameScreen extends AppScreen { // GameScreen extends AppScreen, whi
                 color: colors.text, // set text color (this will be propagated to a pixi Text element created under the hoof)
                 fontSize: 50, // set font size (this will be propagated to a pixi Text element created under the hoof)
                 marginTop: 10, // move 10px down from the top of the parent as the anchor point is 0.5
-                fontFamily: 'debussy', // set font family (this will be propagated to a pixi Text element created under the hoof)
+                fontFamily: defaultFont, // set font family (this will be propagated to a pixi Text element created under the hoof)
                 maxWidth: '30%', // set max width to 30% of the parent width so the layout witt scale down if the screen width is too small to fit it
                 maxHeight: '10%', // set max height to 10% of the parent height so the layout witt scale down if the screen height is too small to fit it
             }

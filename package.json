@@ -1,8 +1,8 @@
 {
-    "name": "pixijs-game-ui",
+    "name": "pixijs-experiments",
     "version": "1.0.0",
     "type": "module",
-    "description": "A simple PixiJS game UI project.",
+    "description": "",
     "author": {
         "name": "CyberDex",
         "url": "https://github.com/CyberDex"
@@ -25,7 +25,7 @@
         "@pixi/layout": "^0.1.6",
         "@pixi/sprite": "^7.2.3",
         "@pixi/text": "^7.2.3",
-        "@pixi/ui": "^0.6.2",
+        "@pixi/ui": "^0.7.0",
         "gsap": "^3.11.4"
     },
     "devDependencies": {

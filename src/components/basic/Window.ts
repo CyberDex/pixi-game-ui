@@ -2,6 +2,7 @@ import { Sprite } from '@pixi/sprite';
 import gsap, {Back} from 'gsap';
 import { colors } from '../../config/colors';
 import { Layout, Styles } from '@pixi/layout';
+import { defaultFont } from '../../config/texts';
 
 /** Layout base component with the config for a base window class to be extended 
  * for creation of any window component.
@@ -21,12 +22,12 @@ export class Window extends Layout {
                         content: options.title, // string given as a parameter
                         styles: { // Styles of the text
                             color: 'white', // color of the text
-                            fontFamily: 'debussy', // font family of the text
-                            fontSize: 60, // font size of the text
+                            fontFamily: defaultFont, // font family of the text
+                            fontSize: 70, // font size of the text
                             position: 'center', // center pixi Text in the middle of parent (ribbon layout in this case)
                             marginTop: -6, // move 6px up from the top of the parent
                             stroke: colors.disabledStroke, // text stroke color
-                            strokeThickness: 10, // text stroke thickness
+                            strokeThickness: 5, // text stroke thickness
                             maxWidth: '83%', // set max width to 83% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
                             maxHeight: '70%', // set max height to 70% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
                             overflow: 'hidden', // hide text that is out of bounds (ribbon sprite size)

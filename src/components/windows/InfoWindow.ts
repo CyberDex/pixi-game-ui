@@ -7,6 +7,7 @@ import { Sprite } from "@pixi/sprite";
 import { Text } from "@pixi/text";
 import { colors } from '../../config/colors';
 import { ScrollBox } from "@pixi/ui";
+import { defaultFont } from "../../config/texts";
 
 /** Layout based component for the info window. */
 export class InfoWindow extends Window { // extends Window class to get all the window functionality
@@ -102,7 +103,7 @@ export class InfoWindow extends Window { // extends Window class to get all the 
                         new Text(text, { // create a `Text` instance with the given text
                             fill: colors.text,  // set text color
                             fontSize: 45, // set text size
-                            fontFamily: 'debussy', // set text font
+                            fontFamily: defaultFont, // set text font
                             stroke: colors.hoverStroke, // set text stroke color
                             strokeThickness: 3, // set text stroke thickness
                             wordWrap: true, // set text word wrap

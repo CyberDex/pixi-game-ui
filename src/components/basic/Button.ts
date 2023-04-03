@@ -2,6 +2,7 @@ import { Text } from "@pixi/text";
 import { FancyButton } from "@pixi/ui";
 import { Layout } from "@pixi/layout";
 import { colors } from "../../config/colors";
+import { defaultFont } from "../../config/texts";
 
 /** Creates a Layout with button as content and apply styles. */
 export class Button extends Layout {
@@ -13,11 +14,12 @@ export class Button extends Layout {
             disabledView: `Button-disabled`, // this is a key to the texture atlas for disabled button state view
             text: new Text(text, { // this is a text that will be displayed on the button
                 fill: colors.text, // text color
-                fontSize: 60, // text size
-                fontFamily: 'debussy', // text font
+                fontSize: 40, // text size
+                fontFamily: defaultFont, // text font
                 stroke: colors.disabledStroke, // text stroke color TODO: change this on button state change
-                strokeThickness: 8, // text stroke thickness
+                strokeThickness: 4, // text stroke thickness
             }),
+            textOffset: { y: -5 }, // offset of the text from the center of the button
             padding: 11, // padding between button edges and text, text will be scaled to fit the button size
             animations: { // animations for button states
                 hover: { // animation for hover state

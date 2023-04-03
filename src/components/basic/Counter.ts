@@ -2,6 +2,7 @@ import { Sprite } from "@pixi/sprite";
 import { colors } from '../../config/colors';
 import { Container } from "@pixi/display";
 import { Text } from "@pixi/text";
+import { defaultFont } from "../../config/texts";
 
 /** Component to show a number. 
  * To be used to point a notification amount as a part of other components. */
@@ -17,7 +18,7 @@ export class Counter extends Container {
         this.number = new Text(String(text), { // create pixi text
             fill: colors.text, // color of the text
             fontSize: 25, // font size of the text
-            fontFamily: 'debussy', // font family of the text
+            fontFamily: defaultFont, // font family of the text
             stroke: colors.hoverStroke, // text stroke color
             strokeThickness: 5, // text stroke thickness
         });

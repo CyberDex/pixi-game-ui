@@ -10,6 +10,7 @@ import { Switch } from "../Switch";
 import { colors } from "../../config/colors";
 import { Slider } from "../Slider";
 import { DottedProgress } from "../DottedProgress";
+import { defaultFont } from "../../config/texts";
 
 /** Layout based component for the settings window. */
 export class SettingsWindow extends Window {
@@ -118,11 +119,11 @@ export class SettingsWindow extends Window {
                     content: i18n.titleScreen.settings.GFX, // string given as a parameter
                     styles: { // Styles of the text
                         color: 'white', // color of the text
-                        fontFamily: 'debussy', // font family of the text
+                        fontFamily: defaultFont, // font family of the text
                         fontSize: 60, // font size of the text
                         position: 'leftCenter', // center pixi Text in the middle of parent
                         stroke: colors.hoverStroke, // text stroke color
-                        strokeThickness: 10, // text stroke thickness
+                        strokeThickness: 4, // text stroke thickness
                         maxWidth: '83%', // set max width to 83% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
                         maxHeight: '70%', // set max height to 70% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
                         overflow: 'hidden', // hide text that is out of bounds (ribbon sprite size)
@@ -136,7 +137,7 @@ export class SettingsWindow extends Window {
                             content: i18n.titleScreen.settings.low, // string given as a parameter, thar will be turned into a pixi Text
                             styles: { // Styles of the text layout, that will be applied to the pixi Text style too
                                 color: 'white', // color of the text
-                                fontFamily: 'debussy', // font family of the text
+                                fontFamily: defaultFont, // font family of the text
                                 fontSize: 30, // font size of the text
                             }
                         },
@@ -144,7 +145,7 @@ export class SettingsWindow extends Window {
                             content: i18n.titleScreen.settings.medium, // string given as a parameter, thar will be turned into a pixi Text
                             styles: { // Styles of the text layout, that will be applied to the pixi Text style too
                                 color: 'white', // color of the text
-                                fontFamily: 'debussy', // font family of the text
+                                fontFamily: defaultFont, // font family of the text
                                 fontSize: 30, // font size of the text
                                 position: 'centerTop', // center pixi Text in the middle of parent
                             }
@@ -153,7 +154,7 @@ export class SettingsWindow extends Window {
                             content: i18n.titleScreen.settings.high, // string given as a parameter, thar will be turned into a pixi Text
                             styles: { // Styles of the text layout, that will be applied to the pixi Text style too
                                 color: 'white', // color of the text
-                                fontFamily: 'debussy', // font family of the text
+                                fontFamily: defaultFont, // font family of the text
                                 fontSize: 30, // font size of the text
                                 position: 'rightTop', // center pixi Text in the right top corner of the parent
                             }
@@ -198,11 +199,11 @@ export class SettingsWindow extends Window {
                     content: i18n.titleScreen.settings.BGM, // string given as a parameter that will be turned into a pixi Text
                     styles: { // Styles of the text layout, that will be applied to the pixi Text style too
                         color: 'white', // color of the text
-                        fontFamily: 'debussy', // font family of the text
+                        fontFamily: defaultFont, // font family of the text
                         fontSize: 60, // font size of the text
                         position: 'leftCenter', // center pixi Text in the middle of parent (ribbon layout in this case)
                         stroke: colors.hoverStroke, // text stroke color
-                        strokeThickness: 10, // text stroke thickness
+                        strokeThickness: 4, // text stroke thickness
                         maxWidth: '83%', // set max width to 83% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
                         maxHeight: '70%', // set max height to 70% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
                         overflow: 'hidden', // hide text that is out of bounds (ribbon sprite size)
@@ -323,11 +324,11 @@ export class SettingsWindow extends Window {
                         content: i18n.titleScreen.settings.antiAliasing, // title text that will be turned into a pixi Text
                         styles: {// Styles of the text also describing pixi Text styles
                             color: 'white', // color of the text
-                            fontFamily: 'debussy', // font family of the text
+                            fontFamily: defaultFont, // font family of the text
                             fontSize: 60, // font size of the text
                             position: 'leftCenter', // center pixi Text in the middle of parent (ribbon layout in this case)
                             stroke: colors.hoverStroke, // text stroke color
-                            strokeThickness: 10, // text stroke thickness
+                            strokeThickness: 4, // text stroke thickness
                             maxWidth: '83%', // set max width to 83% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
                             maxHeight: '70%', // set max height to 70% of parent (ribbon), will scale down if the ribbon sprite is smaller than the text
                             overflow: 'hidden', // hide text that is out of bounds (ribbon sprite size)

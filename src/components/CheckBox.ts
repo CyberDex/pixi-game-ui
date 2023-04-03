@@ -2,6 +2,7 @@ import { CheckBox as BasicCheckBox } from '@pixi/ui';
 import { Sprite } from '@pixi/sprite';
 import { TextStyle } from '@pixi/text';
 import { colors } from '../config/colors';
+import { defaultFont } from '../config/texts';
 
 /** Extends a BasicCheckBox class and apply config to it, 
  * so that instance can be used without need to config it. */
@@ -16,10 +17,10 @@ export class CheckBox extends BasicCheckBox {
                 unchecked: createCheckBox(options.checkboxBG), // sprite(Container), that shows when checkbox is unchecked
                 text: { // text styles
                     fill: 'white', // color of the text
-                    fontFamily: 'debussy', // font family of the text
+                    fontFamily: defaultFont, // font family of the text
                     fontSize: 35, // font size of the text
                     stroke: colors.hoverStroke, // text stroke color
-                    strokeThickness: 6, // text stroke thickness
+                    strokeThickness: 4, // text stroke thickness
                     ...options.textStyle, // apply text styles from options
                 },
                 textOffset: options.textOffset // position offset of the text component from the checkbox

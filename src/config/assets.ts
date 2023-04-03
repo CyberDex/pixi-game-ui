@@ -10,11 +10,11 @@ const assetsManifest: ResolverManifest = {
             assets: [
                 {
                     name: 'spinner',
-                    srcs: 'images/spinner.png',
+                    srcs: 'assets/spinner.png',
                 },
                 {
                     name: 'pixi-logo',
-                    srcs: 'images/pixi-logo.png',
+                    srcs: 'assets/pixi-logo.png',
                 },
             ],
         },
@@ -23,299 +23,299 @@ const assetsManifest: ResolverManifest = {
             assets: [
                 {
                     name: 'avatar-05',
-                    srcs: 'images/avatar-05.png',
+                    srcs: 'assets/avatar-05.png',
                 },
                 {
                     name: 'avatar_mask',
-                    srcs: 'images/avatar_mask.png',
+                    srcs: 'assets/avatar_mask.png',
                 },
                 {
                     name: 'Levels',
-                    srcs: 'images/Examples/Levels.png',
+                    srcs: 'assets/Examples/Levels.png',
                 },
                 {
                     name: 'bg',
-                    srcs: 'images/Examples/BG.png',
+                    srcs: 'assets/Examples/BG.png',
                 },
                 {
                     name:'SmallButton-disabled', 
-                    srcs: 'images/Buttons/SmallButton-disabled.png'
+                    srcs: 'assets/Buttons/SmallButton-disabled.png'
                 },
                 {
                     name:'SmallButton-hover', 
-                    srcs: 'images/Buttons/SmallButton-hover.png'
+                    srcs: 'assets/Buttons/SmallButton-hover.png'
                 },
                 {
                     name:'SmallButton', 
-                    srcs: 'images/Buttons/SmallButton.png'
+                    srcs: 'assets/Buttons/SmallButton.png'
                 },
                 {
                     name:'Button-pressed', 
-                    srcs: 'images/Buttons/Button-pressed.png'
+                    srcs: 'assets/Buttons/Button-pressed.png'
                 },
                 {
                     name:'SmallButton-pressed', 
-                    srcs: 'images/Buttons/SmallButton-pressed.png'
+                    srcs: 'assets/Buttons/SmallButton-pressed.png'
                 },
                 {
                     name:'SmallButton-substrate', 
-                    srcs: 'images/Window/SmallButton-substrate.png'
+                    srcs: 'assets/Window/SmallButton-substrate.png'
                 },
                 {
                     name:'Button-hover', 
-                    srcs: 'images/Buttons/Button-hover.png'
+                    srcs: 'assets/Buttons/Button-hover.png'
                 },
                 {
                     name:'Button-disabled', 
-                    srcs: 'images/Buttons/Button-disabled.png'
+                    srcs: 'assets/Buttons/Button-disabled.png'
                 },
                 {
                     name:'Button', 
-                    srcs: 'images/Buttons/Button.png'
+                    srcs: 'assets/Buttons/Button.png'
                 },
                 {
                     name:'SliderIcon', 
-                    srcs: 'images/Icons/SliderIcon.png'
+                    srcs: 'assets/Icons/SliderIcon.png'
                 },
                 {
                     name:'VertSliderBG', 
-                    srcs: 'images/Progress/VertSliderBG.png'
+                    srcs: 'assets/Progress/VertSliderBG.png'
                 },
                 {
                     name:'SliderBG', 
-                    srcs: 'images/Progress/SliderBG.png'
+                    srcs: 'assets/Progress/SliderBG.png'
                 },
                 {
                     name:'SmallProgress-silver', 
-                    srcs: 'images/Progress/SmallProgress-silver.png'
+                    srcs: 'assets/Progress/SmallProgress-silver.png'
                 },
                 {
                     name:'ValueBG', 
-                    srcs: 'images/Progress/ValueBG.png'
+                    srcs: 'assets/Progress/ValueBG.png'
                 },
                 {
                     name:'SmallProgress-blue', 
-                    srcs: 'images/Progress/SmallProgress-blue.png'
+                    srcs: 'assets/Progress/SmallProgress-blue.png'
                 },
                 {
                     name:'SmallProgress-pink', 
-                    srcs: 'images/Progress/SmallProgress-pink.png'
+                    srcs: 'assets/Progress/SmallProgress-pink.png'
                 },
                 {
                     name:'ProgressBlock', 
-                    srcs: 'images/Progress/ProgressBlock.png'
+                    srcs: 'assets/Progress/ProgressBlock.png'
                 },
                 {
                     name:'ValueBGIcon', 
-                    srcs: 'images/Progress/ValueBGIcon.png'
+                    srcs: 'assets/Progress/ValueBGIcon.png'
                 },
                 {
                     name:'SmallProgressBarBG', 
-                    srcs: 'images/Progress/SmallProgressBarBG.png'
+                    srcs: 'assets/Progress/SmallProgressBarBG.png'
                 },
                 {
                     name:'ProgressBlock-fill', 
-                    srcs: 'images/Progress/ProgressBlock-fill.png'
+                    srcs: 'assets/Progress/ProgressBlock-fill.png'
                 },
                 {
                     name:'SwitchBG', 
-                    srcs: 'images/Window/SwitchBG.png'
+                    srcs: 'assets/Window/SwitchBG.png'
                 },
                 {
                     name:'SmallSubstrate', 
-                    srcs: 'images/Window/SmallSubstrate.png'
+                    srcs: 'assets/Window/SmallSubstrate.png'
                 },
                 {
                     name:'Radio', 
-                    srcs: 'images/Window/Radio.png'
+                    srcs: 'assets/Window/Radio.png'
                 },
                 {
                     name:'Radio-hover', 
-                    srcs: 'images/Window/Radio-hover.png'
+                    srcs: 'assets/Window/Radio-hover.png'
                 },
                 {
                     name:'Radio-bg', 
-                    srcs: 'images/Window/Radio-bg.png'
+                    srcs: 'assets/Window/Radio-bg.png'
                 },
                 {
                     name:'RoundSubstrate', 
-                    srcs: 'images/Window/RoundSubstrate.png'
+                    srcs: 'assets/Window/RoundSubstrate.png'
                 },
                 {
                     name:'MediumSubstrate', 
-                    srcs: 'images/Window/MediumSubstrate.png'
+                    srcs: 'assets/Window/MediumSubstrate.png'
                 },
                 {
                     name:'Substrate', 
-                    srcs: 'images/Window/Substrate.png'
+                    srcs: 'assets/Window/Substrate.png'
                 },
                 {
                     name:'CheckBox-hover', 
-                    srcs: 'images/Window/CheckBox-hover.png'
+                    srcs: 'assets/Window/CheckBox-hover.png'
                 },
                 {
                     name:'MenuWindow', 
-                    srcs: 'images/Window/MenuWindow.png'
+                    srcs: 'assets/Window/MenuWindow.png'
                 },
                 {
                     name:'Ribbon', 
-                    srcs: 'images/Window/Ribbon.png'
+                    srcs: 'assets/Window/Ribbon.png'
                 },
                 {
                     name:'Hint', 
-                    srcs: 'images/Window/Hint.png'
+                    srcs: 'assets/Window/Hint.png'
                 },
                 {
                     name:'HintDown', 
-                    srcs: 'images/Window/Hint-down.png'
+                    srcs: 'assets/Window/Hint-down.png'
                 },
                 {
                     name:'MediumWindow', 
-                    srcs: 'images/Window/MediumWindow.png'
+                    srcs: 'assets/Window/MediumWindow.png'
                 },
                 {
                     name:'Window', 
-                    srcs: 'images/Window/Window.png'
+                    srcs: 'assets/Window/Window.png'
                 },
                 {
                     name:'SmallWindow', 
-                    srcs: 'images/Window/SmallWindow.png'
+                    srcs: 'assets/Window/SmallWindow.png'
                 },
                 {
                     name:'ValueSubstrate', 
-                    srcs: 'images/Window/ValueSubstrate.png'
+                    srcs: 'assets/Window/ValueSubstrate.png'
                 },
                 {
                     name:'CheckBox', 
-                    srcs: 'images/Window/CheckBox.png'
+                    srcs: 'assets/Window/CheckBox.png'
                 },
                 {
                     name:'ArrowIcon', 
-                    srcs: 'images/Icons/ArrowIcon.png'
+                    srcs: 'assets/Icons/ArrowIcon.png'
                 },
                 {
                     name:'ChestIcon', 
-                    srcs: 'images/Icons/ChestIcon.png'
+                    srcs: 'assets/Icons/ChestIcon.png'
                 },
                 {
                     name:'HomeIcon', 
-                    srcs: 'images/Icons/HomeIcon.png'
+                    srcs: 'assets/Icons/HomeIcon.png'
                 },
                 {
                     name:'MenuIcon', 
-                    srcs: 'images/Icons/MenuIcon.png'
+                    srcs: 'assets/Icons/MenuIcon.png'
                 },
                 {
                     name:'PlusIcon', 
-                    srcs: 'images/Icons/PlusIcon.png'
+                    srcs: 'assets/Icons/PlusIcon.png'
                 },
                 {
                     name:'CloseIcon', 
-                    srcs: 'images/Icons/CloseIcon.png'
+                    srcs: 'assets/Icons/CloseIcon.png'
                 },
                 {
                     name:'HillIcon', 
-                    srcs: 'images/Icons/HillIcon.png'
+                    srcs: 'assets/Icons/HillIcon.png'
                 },
                 {
                     name:'DethIcon', 
-                    srcs: 'images/Icons/DethIcon.png'
+                    srcs: 'assets/Icons/DethIcon.png'
                 },
                 {
                     name:'TimeIcon', 
-                    srcs: 'images/Icons/TimeIcon.png'
+                    srcs: 'assets/Icons/TimeIcon.png'
                 },
                 {
                     name:'DeleteIcon', 
-                    srcs: 'images/Icons/DeleteIcon.png'
+                    srcs: 'assets/Icons/DeleteIcon.png'
                 },
                 {
                     name:'PlayIcon', 
-                    srcs: 'images/Icons/PlayIcon.png'
+                    srcs: 'assets/Icons/PlayIcon.png'
                 },
                 {
                     name:'MinusIcon', 
-                    srcs: 'images/Icons/MinusIcon.png'
+                    srcs: 'assets/Icons/MinusIcon.png'
                 },
                 {
                     name:'PauseIcon', 
-                    srcs: 'images/Icons/PauseIcon.png'
+                    srcs: 'assets/Icons/PauseIcon.png'
                 },
                 {
                     name:'GemIcon', 
-                    srcs: 'images/Icons/gemIcon.png'
+                    srcs: 'assets/Icons/gemIcon.png'
                 },
                 {
                     name:'LockIcon', 
-                    srcs: 'images/Icons/LockIcon.png'
+                    srcs: 'assets/Icons/LockIcon.png'
                 },
                 {
                     name:'InfoIcon', 
-                    srcs: 'images/Icons/InfoIcon.png'
+                    srcs: 'assets/Icons/InfoIcon.png'
                 },
                 {
                     name:'EnergyIcon', 
-                    srcs: 'images/Icons/EnergyIcon.png'
+                    srcs: 'assets/Icons/EnergyIcon.png'
                 },
                 {
                     name:'SettingsIcon', 
-                    srcs: 'images/Icons/SettingsIcon.png'
+                    srcs: 'assets/Icons/SettingsIcon.png'
                 },
                 {
                     name:'Star', 
-                    srcs: 'images/Icons/Star.png'
+                    srcs: 'assets/Icons/Star.png'
                 },
                 {
                     name:'HardIcon', 
-                    srcs: 'images/Icons/HardIcon.png'
+                    srcs: 'assets/Icons/HardIcon.png'
                 },
                 {
                     name:'StarIcon', 
-                    srcs: 'images/Icons/StarIcon.png'
+                    srcs: 'assets/Icons/StarIcon.png'
                 },
                 {
                     name:'MeatIcon', 
-                    srcs: 'images/Icons/MeatIcon.png'
+                    srcs: 'assets/Icons/MeatIcon.png'
                 },
                 {
                     name:'DollarIcon', 
-                    srcs: 'images/Icons/DollarIcon.png'
+                    srcs: 'assets/Icons/DollarIcon.png'
                 },
                 {
                     name:'clouds', 
-                    srcs: 'images/BG/clouds.png'
+                    srcs: 'assets/BG/clouds.png'
                 },
                 {
                     name:'mountain2', 
-                    srcs: 'images/BG/mountain2.png'
+                    srcs: 'assets/BG/mountain2.png'
                 },
                 {
                     name:'mountain1', 
-                    srcs: 'images/BG/mountain1.png'
+                    srcs: 'assets/BG/mountain1.png'
                 },
                 {
                     name:'sky2', 
-                    srcs: 'images/BG/sky2.png'
+                    srcs: 'assets/BG/sky2.png'
                 },
                 {
                     name:'sky1', 
-                    srcs: 'images/BG/sky1.png'
+                    srcs: 'assets/BG/sky1.png'
                 },
                 {
                     name:'front', 
-                    srcs: 'images/BG/front.png'
+                    srcs: 'assets/BG/front.png'
                 },
                 {
                     name:'input',
-                    srcs: 'images/input.png'
+                    srcs: 'assets/input.png'
                 },
                 {
                     name:'spinner', 
-                    srcs: 'images/spinner.png'
+                    srcs: 'assets/spinner.png'
                 },
                 {
                     name:'arrow_down', 
-                    srcs: 'images/arrow_down.png'
+                    srcs: 'assets/arrow_down.png'
                 },
             ],
         },
