@@ -1,8 +1,6 @@
 // Do not remove this import, it is needed for the interactions to work
 import '@pixi/events';
 
-import './test.ts';
-
 import { Application } from '@pixi/app';
 import { initAssets } from './config/assets';
 import { game } from './Game';
