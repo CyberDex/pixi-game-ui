@@ -49,10 +49,12 @@ export class GameScreen extends AppScreen { // GameScreen extends AppScreen, whi
                 position: 'centerTop', // center Layout in the top middle of parent (AppScreen layout in this case)
                 color: colors.text, // set text color (this will be propagated to a pixi Text element created under the hoof)
                 fontSize: 50, // set font size (this will be propagated to a pixi Text element created under the hoof)
-                marginTop: 10, // move 10px down from the top of the parent as the anchor point is 0.5
+                marginTop: -2, // move 10px down from the top of the parent as the anchor point is 0.5
                 fontFamily: defaultFont, // set font family (this will be propagated to a pixi Text element created under the hoof)
                 maxWidth: '30%', // set max width to 30% of the parent width so the layout witt scale down if the screen width is too small to fit it
                 maxHeight: '10%', // set max height to 10% of the parent height so the layout witt scale down if the screen height is too small to fit it
+                stroke: colors.disabledStroke, // text stroke color
+                strokeThickness: 8, // text stroke thickness
             }
         });
     }
@@ -140,9 +142,7 @@ export class GameScreen extends AppScreen { // GameScreen extends AppScreen, whi
 
         this.addContent({ // add content to the screen layout
             content: { // content is an object with all the content that will be added to the layer
-                energyProgress: { // energyProgress is the id of the layer
-                    content: this.energy // layout content is a progress bar
-                },
+                energyProgress: this.energy, // add progress bar to the layer
                 energy: { // energy is the id of the layer
                     content: Sprite.from('EnergyIcon'), // layout content is a sprite
                     styles: { // set styles for the sprite
