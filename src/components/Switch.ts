@@ -3,48 +3,52 @@ import { Sprite } from '@pixi/sprite';
 import { Text } from '@pixi/text';
 import { colors } from '../config/colors';
 import { defaultFont } from '../config/texts';
+import { DisplayObject } from '@pixi/display';
 
-/** Extends a BasicCheckBox class and apply config to it, 
- * so that instance can be used without need to config it. 
-*/
+/** Extends a BasicCheckBox class and apply config to it,
+ * so that instance can be used without need to config it.
+ */
 export class Switch extends BasicCheckBox {
     constructor(
         text: string, // text that will be displayed on the checkbox
-        checked:boolean, // initial checkbox state
-        callback?: (checked: boolean) => void // callback function that will be called when checkbox state changes
+        checked: boolean, // initial checkbox state
+        callback?: (checked: boolean) => void, // callback function that will be called when checkbox state changes
     ) {
-        
         super({
-            style: { // style is an object with checkbox assets and text styles
+            style: {
+                // style is an object with checkbox assets and text styles
                 checked: createCheckBox(true), // sprite(Container), that shows when checkbox is checked
                 unchecked: createCheckBox(false), // sprite(Container), that shows when checkbox is unchecked
                 text: LABEL_STYLE, // text styles
-                textOffset: { // position offset of the text component from the checkbox
+                textOffset: {
+                    // position offset of the text component from the checkbox
                     x: -300, // move text to the left
                     y: 6, // move text down
-                }
+                },
             },
             checked, // initial checkbox state
             text, // text that will be displayed on the checkbox
         });
 
-        if (callback) { // if callback function is provided
+        if (callback) {
+            // if callback function is provided
             this.onCheck.connect(callback); // connect checkbox change event to the provided callback
         }
     }
 }
 
 // this is extracted to a function as we are using it inside a `super` call so it can't be called as `this.createCheckBox`
-function createCheckBox(checked: boolean) { // creates a sprite(Container) with checkbox assets
+function createCheckBox(checked: boolean) {
+    // creates a sprite(Container) with checkbox assets
     const bg = Sprite.from('SwitchBG'); // create a background sprite from the provided texture key
     const icon1 = Sprite.from('PauseIcon'); // create a sprite from the provided texture key
     const icon2 = Sprite.from('PauseIcon'); // create a sprite from the provided texture key
     const handle = Sprite.from(checked ? 'SmallButton' : 'SmallButton-pressed'); // create a sprite from the provided texture key
     const stateText = new Text(checked ? 'ON' : 'OFF', TEXT_STYLE); // create a text component
-    
+
     stateText.anchor.set(0.5); // set text component anchor to the center
 
-    bg.addChild(stateText); // add text component to the background sprite
+    bg.addChild(stateText as DisplayObject); // add text component to the background sprite
     stateText.x = bg.width / 2 + (checked ? -stateText.width / 2 - 5 : stateText.width / 2 + 5); // set text position
     stateText.y = bg.height / 2; // set text position
 
@@ -62,17 +66,17 @@ function createCheckBox(checked: boolean) { // creates a sprite(Container) with 
     handle.anchor.set(0.5); // set sprite anchor to the center
 
     handle.y = bg.height / 2; // set sprite position
-    handle.x = (bg.width / 2) + (checked ? handle.width / 2 : -handle.width / 2); // set sprite position
+    handle.x = bg.width / 2 + (checked ? handle.width / 2 : -handle.width / 2); // set sprite position
 
-
-    bg.addChild(handle); // add handle to the background sprite
-    handle.addChild(icon1); // add icon1 to the handle sprite
-    handle.addChild(icon2); // add icon2 to the handle sprite
+    bg.addChild(handle as DisplayObject); // add handle to the background sprite
+    handle.addChild(icon1 as DisplayObject); // add icon1 to the handle sprite
+    handle.addChild(icon2 as DisplayObject); // add icon2 to the handle sprite
 
     return bg; // return background sprite
 }
 
-const TEXT_STYLE = { // Styles of the text
+const TEXT_STYLE = {
+    // Styles of the text
     fill: 'white', // color of the text
     fontFamily: defaultFont, // font family of the text
     fontSize: 27, // font size of the text
@@ -80,7 +84,8 @@ const TEXT_STYLE = { // Styles of the text
     strokeThickness: 4, // text stroke thickness
 };
 
-const LABEL_STYLE = { // Styles of the text
+const LABEL_STYLE = {
+    // Styles of the text
     fill: 'white', // color of the text
     fontFamily: defaultFont, // font family of the text
     fontSize: 60, // font size of the text
