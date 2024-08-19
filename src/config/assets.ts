@@ -15,6 +15,10 @@ const assetsManifest = {
                     alias: 'pixi-logo',
                     src: 'pixi-logo.png',
                 },
+                {
+                    alias: 'bg',
+                    src: 'Examples/BG.png',
+                },
             ],
         },
         {
@@ -31,10 +35,6 @@ const assetsManifest = {
                 {
                     alias: 'Levels',
                     src: 'Examples/Levels.png',
-                },
-                {
-                    alias: 'bg',
-                    src: 'Examples/BG.png',
                 },
                 {
                     alias: 'SmallButton-disabled',
