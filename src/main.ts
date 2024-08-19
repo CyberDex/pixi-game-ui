@@ -14,6 +14,8 @@ export const app = new Application();
 // so we can debug the pixi app layers
 (globalThis as any).__PIXI_APP__ = app;
 
+console.log('test message');
+
 /** Set up a resize function for the app */
 function resize() {
     const windowWidth = window.innerWidth; // Get the width of the window
