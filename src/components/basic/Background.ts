@@ -1,13 +1,17 @@
 import { Layout } from '@pixi/layout';
-import { Sprite } from 'pixi.js';
+import { Assets, Sprite } from 'pixi.js';
 import { PixiLogo } from '../PixiLogo';
 
 /* Layout based component for the background.
  * This is where all the layers of the background should be added and controlled.
  * For example to add a parallax effect, you would add a new layers here and control their positions.
  */
+
 export class Background extends Layout {
     constructor() {
+        const bg = Sprite.from('bg');
+        console.log('bg', bg.texture.label);
+        console.log('bg in cache?', Assets.cache.has('bg'));
         super({
             id: 'gameBackground', // id is used to identify the Layout in the system
             content: {
