@@ -1,15 +1,14 @@
-import i18n from '../../config/i18n';
 import { ScrollBox } from '@pixi/ui';
-import { SmallButton } from '../SmallButton';
-import { Window } from '../basic/Window';
-import { MenuButton } from '../MenuButton';
+import { Sprite } from 'pixi.js';
+import { colors } from '../../config/colors';
+import i18n from '../../config/i18n';
+import { Windows } from '../../config/windows';
+import { ViewController } from '../../controllers/ViewController';
 import { game } from '../../Game';
 import { GameScreen } from '../../screens/GameScreen';
-import { ViewController } from '../../controllers/ViewController';
-import { Windows } from '../../config/windows';
-import { Sprite } from '@pixi/sprite';
-import { colors } from '../../config/colors';
-import { DisplayObject } from '@pixi/display';
+import { Window } from '../basic/Window';
+import { MenuButton } from '../MenuButton';
+import { SmallButton } from '../SmallButton';
 
 /** Window with buttons to select game level and some other navigational buttons. */
 export class LevelsWindow extends Window {
@@ -29,7 +28,7 @@ export class LevelsWindow extends Window {
         });
     }
 
-    /** Create content of the component. Automatically called by extended class (see  Window.ts). */
+    /** Create content of the component. Automatically called by extended class (see Window.ts). */
     override createContent() {
         this.createLevelButtons(); // create level buttons
         this.createNavigationButtons(); // create navigation buttons
@@ -84,7 +83,7 @@ export class LevelsWindow extends Window {
             button.x = levelBlock.width / 2; // set button x position
             button.y = levelBlock.height / 2 - 15; // set button y position
 
-            levelBlock.addChild(button as DisplayObject); // add the button to the substrate Sprite(Container)
+            levelBlock.addChild(button); // add the button to the substrate Sprite(Container)
             levelBlock.scale.set(0.87); // scale the substrate down a bit
 
             const holes: Sprite[] = []; // create an array of sprites variable for the stars holes
@@ -115,7 +114,7 @@ export class LevelsWindow extends Window {
 
                 holes.push(hole); // add the hole to the holes array
 
-                levelBlock.addChild(hole as DisplayObject); // add the hole to the substrate Sprite(Container)
+                levelBlock.addChild(hole); // add the hole to the substrate Sprite(Container)
             }
 
             if (!locked) {
@@ -133,7 +132,7 @@ export class LevelsWindow extends Window {
                     star.x = hole.width / 2 - 12; // set x position
                     star.y = hole.height / 2 - 10; // set y position
 
-                    holes[i].addChild(star as DisplayObject); // add the star to the hole Sprite(Container)
+                    holes[i].addChild(star); // add the star to the hole Sprite(Container)
                 }
             }
 

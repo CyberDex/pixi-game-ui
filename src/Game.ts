@@ -1,11 +1,10 @@
-import { Assets } from '@pixi/assets';
-import { areBundlesLoaded } from './config/assets';
-import { app } from './main';
-import { AppScreen } from './components/basic/AppScreen';
 import { Layout } from '@pixi/layout';
+import { Assets } from 'pixi.js';
+import { AppScreen } from './components/basic/AppScreen';
 import { Background } from './components/basic/Background';
+import { areBundlesLoaded } from './config/assets';
 import { Windows } from './config/windows';
-import { DisplayObject } from '@pixi/display';
+import { app } from './main';
 
 export type SceneData = {
     window?: Windows;
@@ -45,13 +44,13 @@ class Game {
         this.bg = new Background(); // Create a new instance of the background layout
 
         this.bg.resize(this._w, this._h); // Resize background as it is a layout and it needs to know its size in order it's core functionality to work
-        app.stage.addChild(this.bg as DisplayObject); // Add background to the stage
+        app.stage.addChild(this.bg); // Add background to the stage
     }
 
     /** Add screen to the stage, link update & resize functions */
     private async addScreen(screen: AppScreen) {
         // Add screen to stage
-        app.stage.addChild(screen as DisplayObject); // Add screen to the stage
+        app.stage.addChild(screen); // Add screen to the stage
 
         // Add screen's resize handler, if available
         if (screen.resize) {
@@ -89,7 +88,7 @@ class Game {
 
         if (screen.parent) {
             // Remove screen from its parent (usually app.stage, if not changed)
-            screen.parent.removeChild(screen as DisplayObject); // Remove screen from its parent
+            screen.parent.removeChild(screen); // Remove screen from its parent
         }
     }
 

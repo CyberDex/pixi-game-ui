@@ -1,9 +1,7 @@
 import { CheckBox as BasicCheckBox } from '@pixi/ui';
-import { Sprite } from '@pixi/sprite';
-import { TextStyle } from '@pixi/text';
+import { Sprite, TextStyle } from 'pixi.js';
 import { colors } from '../config/colors';
 import { defaultFont } from '../config/texts';
-import { DisplayObject } from '@pixi/display';
 
 /** Extends a BasicCheckBox class and apply config to it,
  * so that instance can be used without need to config it. */
@@ -23,8 +21,7 @@ export class CheckBox extends BasicCheckBox {
                     fill: 'white', // color of the text
                     fontFamily: defaultFont, // font family of the text
                     fontSize: 35, // font size of the text
-                    stroke: colors.hoverStroke, // text stroke color
-                    strokeThickness: 4, // text stroke thickness
+                    stroke: { width: 4, color: colors.hoverStroke }, // text stroke color and thickness
                     ...options.textStyle, // apply text styles from options
                 },
                 textOffset: options.textOffset, // position offset of the text component from the checkbox
@@ -78,7 +75,7 @@ function createCheckBox(
             checkBox.y += 30; // move it down
         }
 
-        bg.addChild(checkBox as DisplayObject); // add the foreground to the background to get a single sprite(Container)
+        bg.addChild(checkBox); // add the foreground to the background to get a single sprite(Container)
     }
 
     return bg; // return the sprite(Container)

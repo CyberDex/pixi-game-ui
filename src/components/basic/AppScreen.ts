@@ -1,8 +1,8 @@
-
-import gsap from 'gsap';
 import { Layout, Styles } from '@pixi/layout';
+import gsap from 'gsap';
+import { Ticker } from 'pixi.js';
 
-/** Layout based component to place screens content. 
+/** Layout based component to place screens content.
  * Should be used as a base class for all screens in the app.
  * Should be added to the app.stage.
  */
@@ -16,23 +16,23 @@ export class AppScreen extends Layout {
                 height: '100%', // set height to 100% of parent (app.stage in this case)
                 color: 'white', // set text color to white
                 ...styles, // add styles passed in the constructor
-            }
+            },
         });
     }
 
     /** Method is automatically called on every update. See Game.ts */
-    public onUpdate(_delta: number) {
+    public onUpdate(_ticker: Ticker) {
         /* Override this method to update the screen */
-    };
+    }
 
-    /** Method is automatically called on every resize. See Game.ts 
+    /** Method is automatically called on every resize. See Game.ts
      * IMPORTANT: This method is propagating resize to all the layout system,
      * that is doing all the "magic" behind it.
      * DO NOT FORGET TO CALL super.resize() IN THE CHILD CLASS IN CASE OF OVERRIDING THIS METHOD
-    */
+     */
     public resize(_w: number, _h: number) {
         super.resize(_w, _h); // propagate resize to the layout system
-    };
+    }
 
     /** Method is automatically called when Layout is shown. See Game.ts */
     public async show() {

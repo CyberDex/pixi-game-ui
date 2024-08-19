@@ -1,5 +1,4 @@
-import { Assets } from '@pixi/assets';
-
+import { Assets, UnresolvedAsset } from 'pixi.js';
 /** List of all assets available for this game, organized in bundles.
  * Each bundle is a group of assets that will be loaded together, for some specific scene.
  */
@@ -9,12 +8,12 @@ const assetsManifest = {
             name: 'preload',
             assets: [
                 {
-                    name: 'spinner',
-                    srcs: 'assets/spinner.png',
+                    alias: 'spinner',
+                    src: 'spinner.png',
                 },
                 {
-                    name: 'pixi-logo',
-                    srcs: 'assets/pixi-logo.png',
+                    alias: 'pixi-logo',
+                    src: 'pixi-logo.png',
                 },
             ],
         },
@@ -22,330 +21,335 @@ const assetsManifest = {
             name: 'game',
             assets: [
                 {
-                    name: 'avatar-05',
-                    srcs: 'assets/avatar-05.png',
+                    alias: 'avatar-05',
+                    src: 'avatar-05.png',
                 },
                 {
-                    name: 'avatar_mask',
-                    srcs: 'assets/avatar_mask.png',
+                    alias: 'avatar_mask',
+                    src: 'avatar_mask.png',
                 },
                 {
-                    name: 'Levels',
-                    srcs: 'assets/Examples/Levels.png',
+                    alias: 'Levels',
+                    src: 'Examples/Levels.png',
                 },
                 {
-                    name: 'bg',
-                    srcs: 'assets/Examples/BG.png',
+                    alias: 'bg',
+                    src: 'Examples/BG.png',
                 },
                 {
-                    name: 'SmallButton-disabled',
-                    srcs: 'assets/Buttons/SmallButton-disabled.png',
+                    alias: 'SmallButton-disabled',
+                    src: 'Buttons/SmallButton-disabled.png',
                 },
                 {
-                    name: 'SmallButton-hover',
-                    srcs: 'assets/Buttons/SmallButton-hover.png',
+                    alias: 'SmallButton-hover',
+                    src: 'Buttons/SmallButton-hover.png',
                 },
                 {
-                    name: 'SmallButton',
-                    srcs: 'assets/Buttons/SmallButton.png',
+                    alias: 'SmallButton',
+                    src: 'Buttons/SmallButton.png',
                 },
                 {
-                    name: 'Button-pressed',
-                    srcs: 'assets/Buttons/Button-pressed.png',
+                    alias: 'Button-pressed',
+                    src: 'Buttons/Button-pressed.png',
                 },
                 {
-                    name: 'SmallButton-pressed',
-                    srcs: 'assets/Buttons/SmallButton-pressed.png',
+                    alias: 'SmallButton-pressed',
+                    src: 'Buttons/SmallButton-pressed.png',
                 },
                 {
-                    name: 'SmallButton-substrate',
-                    srcs: 'assets/Window/SmallButton-substrate.png',
+                    alias: 'SmallButton-substrate',
+                    src: 'Window/SmallButton-substrate.png',
                 },
                 {
-                    name: 'Button-hover',
-                    srcs: 'assets/Buttons/Button-hover.png',
+                    alias: 'Button-hover',
+                    src: 'Buttons/Button-hover.png',
                 },
                 {
-                    name: 'Button-disabled',
-                    srcs: 'assets/Buttons/Button-disabled.png',
+                    alias: 'Button-disabled',
+                    src: 'Buttons/Button-disabled.png',
                 },
                 {
-                    name: 'Button',
-                    srcs: 'assets/Buttons/Button.png',
+                    alias: 'Button',
+                    src: 'Buttons/Button.png',
                 },
                 {
-                    name: 'SliderIcon',
-                    srcs: 'assets/Icons/SliderIcon.png',
+                    alias: 'SliderIcon',
+                    src: 'Icons/SliderIcon.png',
                 },
                 {
-                    name: 'VertSliderBG',
-                    srcs: 'assets/Progress/VertSliderBG.png',
+                    alias: 'VertSliderBG',
+                    src: 'Progress/VertSliderBG.png',
                 },
                 {
-                    name: 'SliderBG',
-                    srcs: 'assets/Progress/SliderBG.png',
+                    alias: 'SliderBG',
+                    src: 'Progress/SliderBG.png',
                 },
                 {
-                    name: 'SmallProgress-silver',
-                    srcs: 'assets/Progress/SmallProgress-silver.png',
+                    alias: 'SmallProgress-silver',
+                    src: 'Progress/SmallProgress-silver.png',
                 },
                 {
-                    name: 'ValueBG',
-                    srcs: 'assets/Progress/ValueBG.png',
+                    alias: 'ValueBG',
+                    src: 'Progress/ValueBG.png',
                 },
                 {
-                    name: 'SmallProgress-blue',
-                    srcs: 'assets/Progress/SmallProgress-blue.png',
+                    alias: 'SmallProgress-blue',
+                    src: 'Progress/SmallProgress-blue.png',
                 },
                 {
-                    name: 'SmallProgress-pink',
-                    srcs: 'assets/Progress/SmallProgress-pink.png',
+                    alias: 'SmallProgress-pink',
+                    src: 'Progress/SmallProgress-pink.png',
                 },
                 {
-                    name: 'ProgressBlock',
-                    srcs: 'assets/Progress/ProgressBlock.png',
+                    alias: 'ProgressBlock',
+                    src: 'Progress/ProgressBlock.png',
                 },
                 {
-                    name: 'ValueBGIcon',
-                    srcs: 'assets/Progress/ValueBGIcon.png',
+                    alias: 'ValueBGIcon',
+                    src: 'Progress/ValueBGIcon.png',
                 },
                 {
-                    name: 'SmallProgressBarBG',
-                    srcs: 'assets/Progress/SmallProgressBarBG.png',
+                    alias: 'SmallProgressBarBG',
+                    src: 'Progress/SmallProgressBarBG.png',
                 },
                 {
-                    name: 'ProgressBlock-fill',
-                    srcs: 'assets/Progress/ProgressBlock-fill.png',
+                    alias: 'ProgressBlock-fill',
+                    src: 'Progress/ProgressBlock-fill.png',
                 },
                 {
-                    name: 'SwitchBG',
-                    srcs: 'assets/Window/SwitchBG.png',
+                    alias: 'SwitchBG',
+                    src: 'Window/SwitchBG.png',
                 },
                 {
-                    name: 'SmallSubstrate',
-                    srcs: 'assets/Window/SmallSubstrate.png',
+                    alias: 'SmallSubstrate',
+                    src: 'Window/SmallSubstrate.png',
                 },
                 {
-                    name: 'Radio',
-                    srcs: 'assets/Window/Radio.png',
+                    alias: 'Radio',
+                    src: 'Window/Radio.png',
                 },
                 {
-                    name: 'Radio-hover',
-                    srcs: 'assets/Window/Radio-hover.png',
+                    alias: 'Radio-hover',
+                    src: 'Window/Radio-hover.png',
                 },
                 {
-                    name: 'Radio-bg',
-                    srcs: 'assets/Window/Radio-bg.png',
+                    alias: 'Radio-bg',
+                    src: 'Window/Radio-bg.png',
                 },
                 {
-                    name: 'RoundSubstrate',
-                    srcs: 'assets/Window/RoundSubstrate.png',
+                    alias: 'RoundSubstrate',
+                    src: 'Window/RoundSubstrate.png',
                 },
                 {
-                    name: 'MediumSubstrate',
-                    srcs: 'assets/Window/MediumSubstrate.png',
+                    alias: 'MediumSubstrate',
+                    src: 'Window/MediumSubstrate.png',
                 },
                 {
-                    name: 'Substrate',
-                    srcs: 'assets/Window/Substrate.png',
+                    alias: 'Substrate',
+                    src: 'Window/Substrate.png',
                 },
                 {
-                    name: 'CheckBox-hover',
-                    srcs: 'assets/Window/CheckBox-hover.png',
+                    alias: 'CheckBox-hover',
+                    src: 'Window/CheckBox-hover.png',
                 },
                 {
-                    name: 'MenuWindow',
-                    srcs: 'assets/Window/MenuWindow.png',
+                    alias: 'MenuWindow',
+                    src: 'Window/MenuWindow.png',
                 },
                 {
-                    name: 'Ribbon',
-                    srcs: 'assets/Window/Ribbon.png',
+                    alias: 'Ribbon',
+                    src: 'Window/Ribbon.png',
                 },
                 {
-                    name: 'Hint',
-                    srcs: 'assets/Window/Hint.png',
+                    alias: 'Hint',
+                    src: 'Window/Hint.png',
                 },
                 {
-                    name: 'HintDown',
-                    srcs: 'assets/Window/Hint-down.png',
+                    alias: 'HintDown',
+                    src: 'Window/Hint-down.png',
                 },
                 {
-                    name: 'MediumWindow',
-                    srcs: 'assets/Window/MediumWindow.png',
+                    alias: 'MediumWindow',
+                    src: 'Window/MediumWindow.png',
                 },
                 {
-                    name: 'Window',
-                    srcs: 'assets/Window/Window.png',
+                    alias: 'Window',
+                    src: 'Window/Window.png',
                 },
                 {
-                    name: 'SmallWindow',
-                    srcs: 'assets/Window/SmallWindow.png',
+                    alias: 'SmallWindow',
+                    src: 'Window/SmallWindow.png',
                 },
                 {
-                    name: 'ValueSubstrate',
-                    srcs: 'assets/Window/ValueSubstrate.png',
+                    alias: 'ValueSubstrate',
+                    src: 'Window/ValueSubstrate.png',
                 },
                 {
-                    name: 'CheckBox',
-                    srcs: 'assets/Window/CheckBox.png',
+                    alias: 'CheckBox',
+                    src: 'Window/CheckBox.png',
                 },
                 {
-                    name: 'ArrowIcon',
-                    srcs: 'assets/Icons/ArrowIcon.png',
+                    alias: 'ArrowIcon',
+                    src: 'Icons/ArrowIcon.png',
                 },
                 {
-                    name: 'ChestIcon',
-                    srcs: 'assets/Icons/ChestIcon.png',
+                    alias: 'ChestIcon',
+                    src: 'Icons/ChestIcon.png',
                 },
                 {
-                    name: 'HomeIcon',
-                    srcs: 'assets/Icons/HomeIcon.png',
+                    alias: 'HomeIcon',
+                    src: 'Icons/HomeIcon.png',
                 },
                 {
-                    name: 'MenuIcon',
-                    srcs: 'assets/Icons/MenuIcon.png',
+                    alias: 'MenuIcon',
+                    src: 'Icons/MenuIcon.png',
                 },
                 {
-                    name: 'PlusIcon',
-                    srcs: 'assets/Icons/PlusIcon.png',
+                    alias: 'PlusIcon',
+                    src: 'Icons/PlusIcon.png',
                 },
                 {
-                    name: 'CloseIcon',
-                    srcs: 'assets/Icons/CloseIcon.png',
+                    alias: 'CloseIcon',
+                    src: 'Icons/CloseIcon.png',
                 },
                 {
-                    name: 'HillIcon',
-                    srcs: 'assets/Icons/HillIcon.png',
+                    alias: 'HillIcon',
+                    src: 'Icons/HillIcon.png',
                 },
                 {
-                    name: 'DethIcon',
-                    srcs: 'assets/Icons/DethIcon.png',
+                    alias: 'DethIcon',
+                    src: 'Icons/DethIcon.png',
                 },
                 {
-                    name: 'TimeIcon',
-                    srcs: 'assets/Icons/TimeIcon.png',
+                    alias: 'TimeIcon',
+                    src: 'Icons/TimeIcon.png',
                 },
                 {
-                    name: 'DeleteIcon',
-                    srcs: 'assets/Icons/DeleteIcon.png',
+                    alias: 'DeleteIcon',
+                    src: 'Icons/DeleteIcon.png',
                 },
                 {
-                    name: 'PlayIcon',
-                    srcs: 'assets/Icons/PlayIcon.png',
+                    alias: 'PlayIcon',
+                    src: 'Icons/PlayIcon.png',
                 },
                 {
-                    name: 'MinusIcon',
-                    srcs: 'assets/Icons/MinusIcon.png',
+                    alias: 'MinusIcon',
+                    src: 'Icons/MinusIcon.png',
                 },
                 {
-                    name: 'PauseIcon',
-                    srcs: 'assets/Icons/PauseIcon.png',
+                    alias: 'PauseIcon',
+                    src: 'Icons/PauseIcon.png',
                 },
                 {
-                    name: 'GemIcon',
-                    srcs: 'assets/Icons/gemIcon.png',
+                    alias: 'GemIcon',
+                    src: 'Icons/gemIcon.png',
                 },
                 {
-                    name: 'LockIcon',
-                    srcs: 'assets/Icons/LockIcon.png',
+                    alias: 'LockIcon',
+                    src: 'Icons/LockIcon.png',
                 },
                 {
-                    name: 'InfoIcon',
-                    srcs: 'assets/Icons/InfoIcon.png',
+                    alias: 'InfoIcon',
+                    src: 'Icons/InfoIcon.png',
                 },
                 {
-                    name: 'EnergyIcon',
-                    srcs: 'assets/Icons/EnergyIcon.png',
+                    alias: 'EnergyIcon',
+                    src: 'Icons/EnergyIcon.png',
                 },
                 {
-                    name: 'SettingsIcon',
-                    srcs: 'assets/Icons/SettingsIcon.png',
+                    alias: 'SettingsIcon',
+                    src: 'Icons/SettingsIcon.png',
                 },
                 {
-                    name: 'Star',
-                    srcs: 'assets/Icons/Star.png',
+                    alias: 'Star',
+                    src: 'Icons/Star.png',
                 },
                 {
-                    name: 'HardIcon',
-                    srcs: 'assets/Icons/HardIcon.png',
+                    alias: 'HardIcon',
+                    src: 'Icons/HardIcon.png',
                 },
                 {
-                    name: 'StarIcon',
-                    srcs: 'assets/Icons/StarIcon.png',
+                    alias: 'StarIcon',
+                    src: 'Icons/StarIcon.png',
                 },
                 {
-                    name: 'MeatIcon',
-                    srcs: 'assets/Icons/MeatIcon.png',
+                    alias: 'MeatIcon',
+                    src: 'Icons/MeatIcon.png',
                 },
                 {
-                    name: 'DollarIcon',
-                    srcs: 'assets/Icons/DollarIcon.png',
+                    alias: 'DollarIcon',
+                    src: 'Icons/DollarIcon.png',
                 },
                 {
-                    name: 'clouds',
-                    srcs: 'assets/BG/clouds.png',
+                    alias: 'clouds',
+                    src: 'BG/clouds.png',
                 },
                 {
-                    name: 'mountain2',
-                    srcs: 'assets/BG/mountain2.png',
+                    alias: 'mountain2',
+                    src: 'BG/mountain2.png',
                 },
                 {
-                    name: 'mountain1',
-                    srcs: 'assets/BG/mountain1.png',
+                    alias: 'mountain1',
+                    src: 'BG/mountain1.png',
                 },
                 {
-                    name: 'sky2',
-                    srcs: 'assets/BG/sky2.png',
+                    alias: 'sky2',
+                    src: 'BG/sky2.png',
                 },
                 {
-                    name: 'sky1',
-                    srcs: 'assets/BG/sky1.png',
+                    alias: 'sky1',
+                    src: 'BG/sky1.png',
                 },
                 {
-                    name: 'front',
-                    srcs: 'assets/BG/front.png',
+                    alias: 'front',
+                    src: 'BG/front.png',
                 },
                 {
-                    name: 'input',
-                    srcs: 'assets/input.png',
+                    alias: 'input',
+                    src: 'input.png',
                 },
                 {
-                    name: 'spinner',
-                    srcs: 'assets/spinner.png',
+                    alias: 'spinner',
+                    src: 'spinner.png',
                 },
                 {
-                    name: 'arrow_down',
-                    srcs: 'assets/arrow_down.png',
+                    alias: 'arrow_down',
+                    src: 'arrow_down.png',
                 },
             ],
         },
     ],
 };
 
-/** Initialize and start background loading of all assets */
+/** Initialise and start background loading of all assets */
 export async function initAssets() {
     // Init PixiJS assets with this asset manifest
-    await Assets.init({ manifest: assetsManifest });
+    await Assets.init({ manifest: assetsManifest, basePath: 'assets' });
 
     // Load assets for the load screen
-    await Assets.loadBundle('preload');
+    await Assets.loadBundle(['preload', 'default']);
 
     // List all existing bundles names
-    const allBundles = assetsManifest.bundles.map((item: { name: string }) => item.name);
+    const allBundles = assetsManifest.bundles.map((item) => item.name);
 
     // Start up background loading of all bundles
     Assets.backgroundLoadBundle(allBundles);
 }
 
+/**
+ * Check to see if a bundle has loaded
+ * @param bundle - The unique id of the bundle
+ * @returns Whether or not the bundle has been loaded
+ */
 export function isBundleLoaded(bundle: string) {
-    const bundleManifest = assetsManifest.bundles.find((b: { name: string }) => b.name === bundle);
+    const bundleManifest = assetsManifest.bundles.find((b) => b.name === bundle);
 
     if (!bundleManifest) {
         return false;
     }
 
-    for (const asset of bundleManifest.assets as any) {
-        if (!Assets.cache.has(asset.name as string)) {
+    for (const asset of bundleManifest.assets as UnresolvedAsset[]) {
+        if (!Assets.cache.has(asset.alias as string)) {
             return false;
         }
     }

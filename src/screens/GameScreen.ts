@@ -1,16 +1,16 @@
+import { Layout } from '@pixi/layout';
+import { MaskedFrame, ProgressBar } from '@pixi/ui';
+import { Sprite } from 'pixi.js';
 import { AppScreen } from '../components/basic/AppScreen';
-import i18n from '../config/i18n';
+import { CloseButton } from '../components/CloseButton';
+import { Hint } from '../components/Hint';
 import { SmallIconButton } from '../components/SmallIconButton';
+import { colors } from '../config/colors';
+import i18n from '../config/i18n';
+import { defaultFont } from '../config/texts';
+import { Windows } from '../config/windows';
 import { game, SceneData } from '../Game';
 import { TitleScreen } from './TitleScreen';
-import { colors } from '../config/colors';
-import { Windows } from '../config/windows';
-import { Sprite } from '@pixi/sprite';
-import { MaskedFrame, ProgressBar } from '@pixi/ui';
-import { Hint } from '../components/Hint';
-import { CloseButton } from '../components/CloseButton';
-import { Layout } from '@pixi/layout';
-import { defaultFont } from '../config/texts';
 
 /** Game screen.
  * To be used to show all the game play and UI.
@@ -58,8 +58,7 @@ export class GameScreen extends AppScreen {
                 fontFamily: defaultFont, // set font family (this will be propagated to a pixi Text element created under the hoof)
                 maxWidth: '30%', // set max width to 30% of the parent width so the layout witt scale down if the screen width is too small to fit it
                 maxHeight: '10%', // set max height to 10% of the parent height so the layout witt scale down if the screen height is too small to fit it
-                stroke: colors.disabledStroke, // text stroke color
-                strokeThickness: 8, // text stroke thickness
+                stroke: { width: 8, color: colors.disabledStroke }, // text stroke color and thickness
             },
         });
     }
