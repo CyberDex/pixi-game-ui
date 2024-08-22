@@ -309,10 +309,6 @@ const assetsManifest = {
                     src: 'input.png',
                 },
                 {
-                    alias: 'spinner',
-                    src: 'spinner.png',
-                },
-                {
                     alias: 'arrow_down',
                     src: 'arrow_down.png',
                 },
