@@ -160,6 +160,7 @@ export class SettingsWindow extends Window {
                                 color: 'white', // color of the text
                                 fontFamily: defaultFont, // font family of the text
                                 fontSize: 30, // font size of the text
+                                stroke: { width: 4, color: colors.hoverStroke }, // text stroke color and thickness
                             },
                         },
                         medium: {
@@ -170,7 +171,8 @@ export class SettingsWindow extends Window {
                                 color: 'white', // color of the text
                                 fontFamily: defaultFont, // font family of the text
                                 fontSize: 30, // font size of the text
-                                position: 'centerTop', // center pixi Text in the middle of parent
+                                position: 'centerTop', // center pixi Text in the middle of parent,
+                                stroke: { width: 4, color: colors.hoverStroke }, // text stroke color and thickness
                             },
                         },
                         high: {
@@ -182,6 +184,7 @@ export class SettingsWindow extends Window {
                                 fontFamily: defaultFont, // font family of the text
                                 fontSize: 30, // font size of the text
                                 position: 'rightTop', // center pixi Text in the right top corner of the parent
+                                stroke: { width: 4, color: colors.hoverStroke }, // text stroke color and thickness
                             },
                         },
                         slider: {
@@ -377,7 +380,7 @@ export class SettingsWindow extends Window {
                     textStyle: {
                         // styles of the text
                         fontSize: 30, // font size of the text,
-                        stroke: { width: 3 }, // text stroke thickness
+                        stroke: { width: 3, color: colors.hoverStroke }, // text stroke thickness
                     },
                 }),
         );

@@ -30,7 +30,7 @@ export class Hint extends Layout {
                         color: colors.text, // color of the text
                         fontSize: 45, // font size of the text
                         fontFamily: defaultFont, // font family of the text
-                        stroke: colors.disabledStroke + '4', // stroke color of the text and thickness
+                        stroke: { width: 8, color: colors.disabledStroke }, // stroke color of the text and thickness
                         marginTop: 12, // set margin top to 18px
                     },
                 },

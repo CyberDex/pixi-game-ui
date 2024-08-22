@@ -17,12 +17,12 @@ export class CheckBox extends BasicCheckBox {
                 ),
                 unchecked: createCheckBox(options.checkboxBG), // sprite(Container), that shows when checkbox is unchecked
                 text: {
-                    // text styles
+                    // Styles of the text
                     fill: 'white', // color of the text
                     fontFamily: defaultFont, // font family of the text
                     fontSize: 35, // font size of the text
                     stroke: { width: 4, color: colors.hoverStroke }, // text stroke color and thickness
-                    ...options.textStyle, // apply text styles from options
+                    ...options.textStyle,
                 },
                 textOffset: options.textOffset, // position offset of the text component from the checkbox
             },
