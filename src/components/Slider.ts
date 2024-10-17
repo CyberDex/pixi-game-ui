@@ -8,6 +8,7 @@ export class Slider extends BasicSlider {
     constructor(options: {
         min: number; // min value of the slider
         max: number; // max value of the slider
+        step?: number; // step value of the slider
         value?: number; // current value of the slider
         onChange: (val: number) => void; // callback that will be called when slider value changes
     }) {
@@ -24,6 +25,7 @@ export class Slider extends BasicSlider {
             slider: sliderButton,
             min: options.min,
             max: options.max,
+            step: options.step ?? 1,
             value: options.value ?? 0,
         });
 

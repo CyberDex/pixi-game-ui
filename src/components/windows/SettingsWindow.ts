@@ -191,9 +191,10 @@ export class SettingsWindow extends Window {
                             // id of the slider layout
                             content: new Slider({
                                 // create a new slider component
-                                min: 1, // minimum value of the slider
-                                max: 3, // maximum value of the slider
+                                min: 0, // minimum value of the slider
+                                max: 100, // maximum value of the slider
                                 value: 2, // initial value of the slider
+                                step: 10,
                                 onChange: (value) => {
                                     // callback function that will be called when the slider value changes (after the user releases the mouse button)
                                     console.log(
