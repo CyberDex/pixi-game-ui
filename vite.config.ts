@@ -2,15 +2,13 @@ import { defineConfig, type Plugin, type ResolvedConfig } from 'vite';
 import { AssetPack } from '@assetpack/core';
 
 function assetpackPlugin(): Plugin {
-    console.log("assetpackPlugin...");
-    
     const apConfig = {
-        entry: './raw-assets',
+        entry: './assets',
         pipes: [
             // Add your pipes here
         ],
     };
-    }
+
     let mode: ResolvedConfig['command'];
     let ap: AssetPack | undefined;
 
@@ -42,7 +40,7 @@ function assetpackPlugin(): Plugin {
 }
 
 export default defineConfig({
-    base: '/pixi-game-ui/' // replace with the name of your repo
+    base: '/pixi-game-ui/', // replace with the name of your repo
     plugins: [
         assetpackPlugin(),
     ],
