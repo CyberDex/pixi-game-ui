@@ -207,48 +207,47 @@ export class GameScreen extends AppScreen {
         }, 1000);
 
         this.addContent({
-            // add content to the screen layout
             // se are setting this id of this layout to 'tutorialBlock', so we can access it later by `getChildByID`
-            tutorialBlock: {
-                // tutorialBlock is the id of the layer
-                content: {
-                    // content is an object with all the content that will be added to the layer
-                    avatar, // this is gonna be a layout with id 'avatar' and content of the avatar variable
-                    message: {
-                        // message is the id of the layer
-                        content: this.tutorialMessage, // layout content is a hint
-                        styles: {
-                            height: 1, // set the height so the layout will be visible
-                            position: 'right', // position the block to the right of the parent
-                            marginRight: -130, // move the block 130px to the right
-                            marginTop: -230, // move the block 230px up
-                        },
-                    },
-                    closeButton: {
-                        // closeButton is the id of the layer
-                        content: new CloseButton(() => {
-                            // create a close button with the given callback
-                            // click on this button will hide the tutorial block
-                            const tutorialBlock = this.getChildByID('tutorialBlock') as Layout; // get the tutorial block layout
-                            tutorialBlock.visible = false; // hide the tutorial block
-                        }),
-                        styles: {
-                            // set styles for the close button
-                            position: 'rightTop', // position the block to the right top of the parents
-                            marginRight: -35, // move the block 10px to the rights
-                            marginTop: 25, // move the block 10px up
-                            scale: 0.5, // scale the button 0.5 times
-                        },
+            // tutorialBlock is the id of the layer
+            content: {
+                // content is an object with all the content that will be added to the layer
+                avatar: {
+                    content: avatar as any,
+                }, // this is gonna be a layout with id 'avatar' and content of the avatar variable
+                message: {
+                    // message is the id of the layer
+                    content: this.tutorialMessage, // layout content is a hint
+                    styles: {
+                        height: 1, // set the height so the layout will be visible
+                        position: 'right', // position the block to the right of the parent
+                        marginRight: -130, // move the block 130px to the right
+                        marginTop: -230, // move the block 230px up
                     },
                 },
-                styles: {
-                    // set styles for the picture block
-                    marginLeft: 8, // move the block 20px to the left
-                    marginBottom: 8, // move the block 20px down
-                    maxWidth: '30%', // set max width to 30% of the parent width so the layout witt scale down if the screen width is too small to fit it
-                    maxHeight: '30%', // set max height to 30% of the parent height so the layout witt scale down if the screen height is too small to fit it
-                    position: 'leftBottom', // position the block to the left bottom of the parent
+                closeButton: {
+                    // closeButton is the id of the layer
+                    content: new CloseButton(() => {
+                        // create a close button with the given callback
+                        // click on this button will hide the tutorial block
+                        const tutorialBlock = this.getChildByID('tutorialBlock') as Layout; // get the tutorial block layout
+                        tutorialBlock.visible = false; // hide the tutorial block
+                    }),
+                    styles: {
+                        // set styles for the close button
+                        position: 'rightTop', // position the block to the right top of the parents
+                        marginRight: -35, // move the block 10px to the rights
+                        marginTop: 25, // move the block 10px up
+                        scale: 0.5, // scale the button 0.5 times
+                    },
                 },
+            },
+            styles: {
+                // set styles for the picture block
+                marginLeft: 8, // move the block 20px to the left
+                marginBottom: 8, // move the block 20px down
+                maxWidth: '30%', // set max width to 30% of the parent width so the layout witt scale down if the screen width is too small to fit it
+                maxHeight: '30%', // set max height to 30% of the parent height so the layout witt scale down if the screen height is too small to fit it
+                position: 'leftBottom', // position the block to the left bottom of the parent
             },
         });
     }

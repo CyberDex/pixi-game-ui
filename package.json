@@ -16,7 +16,6 @@
         "format": "prettier --write src/**/*.{ts}"
     },
     "dependencies": {
-        "pixi.js": "^8.3.3",
         "@pixi/layout": "^2.0.1",
         "@pixi/ui": "^2.1.5",
         "gsap": "^3.11.4",
