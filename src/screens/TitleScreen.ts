@@ -2,6 +2,7 @@ import { AppScreen } from '../components/basic/AppScreen';
 import { Window } from '../components/basic/Window';
 import { InfoWindow } from '../components/windows/InfoWindow';
 import { LevelsWindow } from '../components/windows/LevelsWindow';
+import { LoginWindow } from '../components/windows/LoginWindow';
 import { PauseWindow } from '../components/windows/PauseWindow';
 import { SettingsWindow } from '../components/windows/SettingsWindow';
 import { Windows } from '../config/windows';
@@ -38,6 +39,7 @@ export class TitleScreen extends AppScreen {
     private createWindows(
         activeWindow?: Windows, // active window to show
     ) {
+        this.addWindow(Windows.login, new LoginWindow(this.views)); // create LevelsWindow
         this.addWindow(Windows.levels, new LevelsWindow(this.views)); // create LevelsWindow
         this.addWindow(Windows.pause, new PauseWindow(this.views)); // create PauseWindow
         this.addWindow(Windows.settings, new SettingsWindow(this.views)); // create SettingsWindow

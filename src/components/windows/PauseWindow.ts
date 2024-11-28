@@ -52,9 +52,9 @@ export class PauseWindow extends Window {
             () => this.views.show(Windows.settings), // callback: show the settings window on click
         );
 
-        const exitButton = new Button( // create an exit button
-            i18n.titleScreen.menu.items.exit, // button text
-            () => console.log('exit'), // callback: log exit on click (TODO: implement exit)
+        const loginButton = new Button( // create an exit button
+            i18n.titleScreen.menu.items.login, // button text
+            () => this.views.show(Windows.login), // callback: show the settings window on click
         );
 
         this.addContent({
@@ -63,14 +63,6 @@ export class PauseWindow extends Window {
                 // menu is the id of the layout
                 content: {
                     // content is the layout config object with all the buttons and their styles configs
-                    levels: {
-                        // levels is the id of the button
-                        content: levelsButton, // content is the button component
-                        styles: {
-                            // styles is an object with all the styles that will be applied to the button
-                            marginTop: 10, // move the button 10px down from the neighbour buttons
-                        },
-                    },
                     replay: {
                         // replay is the id of the button
                         content: replayButton, // content is the button component
@@ -79,17 +71,25 @@ export class PauseWindow extends Window {
                             marginTop: 10, // move the button 10px down from the neighbour buttons
                         },
                     },
-                    settings: {
-                        // settings is the id of the button
-                        content: settingsButton, // content is the button component
+                    login: {
+                        // exit is the id of the button
+                        content: loginButton, // content is the button component
                         styles: {
                             // styles is an object with all the styles that will be applied to the button
                             marginTop: 10, // move the button 10px down from the neighbour buttons
                         },
                     },
-                    exit: {
-                        // exit is the id of the button
-                        content: exitButton, // content is the button component
+                    levels: {
+                        // levels is the id of the button
+                        content: levelsButton, // content is the button component
+                        styles: {
+                            // styles is an object with all the styles that will be applied to the button
+                            marginTop: 10, // move the button 10px down from the neighbour buttons
+                        },
+                    },
+                    settings: {
+                        // settings is the id of the button
+                        content: settingsButton, // content is the button component
                         styles: {
                             // styles is an object with all the styles that will be applied to the button
                             marginTop: 10, // move the button 10px down from the neighbour buttons

@@ -1,5 +1,5 @@
 import { Layout } from '@pixi/layout';
-import { Assets, Sprite } from 'pixi.js';
+import { Sprite } from 'pixi.js';
 import { PixiLogo } from '../PixiLogo';
 
 /* Layout based component for the background.
@@ -9,9 +9,6 @@ import { PixiLogo } from '../PixiLogo';
 
 export class Background extends Layout {
     constructor() {
-        const bg = Sprite.from('bg');
-        console.log('bg', bg.texture.label);
-        console.log('bg in cache?', Assets.cache.has('bg'));
         super({
             id: 'gameBackground', // id is used to identify the Layout in the system
             content: {

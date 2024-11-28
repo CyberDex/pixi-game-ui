@@ -6,6 +6,7 @@ import { GameScreen } from './screens/GameScreen';
 import { LoadScreen } from './screens/LoadScreen';
 import { TitleScreen } from './screens/TitleScreen';
 import { getUrlParam } from './utils/gtUrlParams';
+import { Windows } from './config/windows';
 
 /** The PixiJS app Application instance, shared across the project */
 export const app = new Application();
@@ -13,8 +14,6 @@ export const app = new Application();
 // Expose that app to the PixiJS Devtools (https://chrome.google.com/webstore/detail/pixijs-devtools/aamddddknhcagpehecnhphigffljadon)
 // so we can debug the pixi app layers
 (globalThis as any).__PIXI_APP__ = app;
-
-console.log('test message');
 
 /** Set up a resize function for the app */
 function resize() {
@@ -57,7 +56,9 @@ async function init() {
             await game.showScreen(LoadScreen); // Show the load screen
             break;
         default:
-            await game.showScreen(TitleScreen); // Show the title screen
+            await game.showScreen(TitleScreen, {
+                window: Windows.pause, // show screen with PauseWindow opened
+            }); // Show the title screen
             break;
     }
 }
