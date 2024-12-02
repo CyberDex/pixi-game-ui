@@ -70,6 +70,7 @@ export class LoginWindow extends Window {
                 fontSize: 30, // font size of the text,
                 stroke: { width: 3, color: colors.hoverStroke }, // text stroke thickness
             },
+            secure: true,
             align: 'center',
             placeholder: i18n.titleScreen.login.items.password,
             addMask: true,
