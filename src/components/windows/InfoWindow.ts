@@ -105,18 +105,20 @@ export class InfoWindow extends Window {
         const textBG = Sprite.from('SmallSubstrate'); // create a sprite from the texture with id 'SmallSubstrate'
         textBG.scale.set(1.2); // scale the sprite us a bit
 
+        const padding = 50; // set padding for the text block
+
         this.addContent({
             // add the text to the layout system of the Window
             text: {
                 // 'text' is the id of the layer
                 content: new ScrollBox({
                     // layout content is a 'ScrollBox' instance that extends `Container`
-                    width: textBG.width - 40, // width of the scroll box
-                    height: textBG.height - 50, // height of the scroll box
+                    width: textBG.width - padding, // width of the scroll box
+                    height: textBG.height - padding, // height of the scroll box
                     radius: 100, // radius of the scroll box corners (mask will be applied to hide the content outside the box)
                     elementsMargin: 20, // margin between the elements (in this case it is only one element so it will be it's margins from the box)
                     type: 'vertical', // type of the scroll box, can be 'vertical' or 'horizontal'
-                    padding: 50, // padding of the scroll box, will be applied to the content offset from the box
+                    padding, // padding of the scroll box, will be applied to the content offset from the box
                     items: [
                         // array of the items that will be added to the scroll box, positioned basing on their sizes and margins one after another to be scrolled
                         new Text({
@@ -128,7 +130,7 @@ export class InfoWindow extends Window {
                                 fontFamily: defaultFont, // set text font
                                 stroke: { width: 3, color: colors.hoverStroke }, // text stroke color and thickness
                                 wordWrap: true, // set text word wrap
-                                wordWrapWidth: textBG.width - 100, // set text word wrap width
+                                wordWrapWidth: textBG.width - padding * 2, // set text word wrap width
                             },
                         }),
                     ],
