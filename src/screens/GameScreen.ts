@@ -11,6 +11,7 @@ import { defaultFont } from '../config/texts';
 import { Windows } from '../config/windows';
 import { game, SceneData } from '../Game';
 import { TitleScreen } from './TitleScreen';
+import gsap, { Back } from 'gsap';
 
 /** Game screen.
  * To be used to show all the game play and UI.
@@ -207,8 +208,10 @@ export class GameScreen extends AppScreen {
         }, 1000);
 
         this.addContent({
-            // se are setting this id of this layout to 'tutorialBlock', so we can access it later by `getChildByID`
+            // We are setting this id of this layout to 'tutorialBlock', 
+            // so we can access it later by `getChildByID`
             // tutorialBlock is the id of the layer
+            id: 'tutorialBlock',
             content: {
                 // content is an object with all the content that will be added to the layer
                 avatar: {
@@ -226,11 +229,18 @@ export class GameScreen extends AppScreen {
                 },
                 closeButton: {
                     // closeButton is the id of the layer
-                    content: new CloseButton(() => {
+                    content: new CloseButton(async () => {
                         // create a close button with the given callback
                         // click on this button will hide the tutorial block
                         const tutorialBlock = this.getChildByID('tutorialBlock') as Layout; // get the tutorial block layout
-                        tutorialBlock.visible = false; // hide the tutorial block
+
+                        await gsap.to(tutorialBlock, {
+                            // hide tween the tutorial block
+                            alpha: 0, // set alpha to 0
+                            x: (-tutorialBlock.width - tutorialBlock.x) * 2, // move the block to the left of the screen
+                            duration: 1, // tween duration
+                            ease: Back.easeOut.config(1.7), // tween ease
+                        });
                     }),
                     styles: {
                         // set styles for the close button
