@@ -17,9 +17,9 @@
     },
     "dependencies": {
         "@pixi/layout": "^2.0.1",
-        "@pixi/ui": "^2.2.2",
-        "gsap": "^3.11.4",
-        "pixi.js": "^8.6.2"
+        "@pixi/ui": "^2.2.4",
+        "gsap": "^3.13.0",
+        "pixi.js": "^8.9.2"
     },
     "devDependencies": {
         "eslint": "^8.32.0",
