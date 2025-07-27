@@ -81,7 +81,7 @@ export class LoginWindow extends Window {
 
         const remember = new CheckBox({
             // create a new CheckBox component (see CheckBox.ts)
-            text: i18n.titleScreen.login.items.remember, // text of the checkbox
+            text: '', //i18n.titleScreen.login.items.remember, // text of the checkbox
             checked: true, // initial state of the checkbox
             checkboxBG: 'RoundSubstrate', // background of the checkbox
             checkboxFG: 'CheckBox', // foreground of the checkbox
@@ -94,6 +94,8 @@ export class LoginWindow extends Window {
                 y: 0, // move the text 3px down from the checkbox
             },
         });
+
+        remember.text = i18n.titleScreen.login.items.remember; // set the text of the checkbox
 
         const enterButton = new Button( // create an exit button
             i18n.titleScreen.login.items.enter, // button text
