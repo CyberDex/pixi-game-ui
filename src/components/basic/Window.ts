@@ -15,7 +15,7 @@ export class Window extends Layout {
     }) {
         super({
             // Layout constructor accepts an object with all the config
-            id: `Window-${options.title}`, // id of the component, can be used to access it laterS
+            id: `Window-${options.title}`, // id of the component, can be used to access it later
             content: {
                 // Content of the component
                 ribbon: {

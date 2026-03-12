@@ -17,7 +17,7 @@
     },
     "dependencies": {
         "@pixi/layout": "^2.0.1",
-        "@pixi/ui": "^2.2.6",
+        "@pixi/ui": "^2.3.2",
         "gsap": "^3.13.0",
         "pixi.js": "^8.11.0"
     },

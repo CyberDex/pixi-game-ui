@@ -14,7 +14,7 @@ export type SceneData = {
 
 /** Interface for app screens constructors */
 interface AppScreenConstructor {
-    new (data?: any): AppScreen;
+    new(data?: any): AppScreen;
     assetBundles?: string[];
 }
 /**
@@ -45,6 +45,9 @@ class Game {
 
         this.bg.resize(this._w, this._h); // Resize background as it is a layout and it needs to know its size in order it's core functionality to work
         app.stage.addChild(this.bg); // Add background to the stage
+
+
+
     }
 
     /** Add screen to the stage, link update & resize functions */

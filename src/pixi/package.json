@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@pixi/ui": "^2.3.0"
+  }
+}
