@@ -4,4 +4,5 @@ export enum Windows {
     levels = 2,
     settings = 3,
     info = 4,
+    components = 5,
 }

@@ -57,6 +57,11 @@ export class PauseWindow extends Window {
             () => this.views.show(Windows.login), // callback: show the settings window on click
         );
 
+        const componentsButton = new Button( // create a components window navigational button
+            i18n.titleScreen.menu.items.components, // button text
+            () => this.views.show(Windows.components), // callback: show the components window on click
+        );
+
         this.addContent({
             // add the buttons to the window layout system
             menu: {
@@ -84,6 +89,13 @@ export class PauseWindow extends Window {
                         content: levelsButton, // content is the button component
                         styles: {
                             // styles is an object with all the styles that will be applied to the button
+                            marginTop: 10, // move the button 10px down from the neighbour buttons
+                        },
+                    },
+                    components: {
+                        // components is the id of the button
+                        content: componentsButton, // content is the button component
+                        styles: {
                             marginTop: 10, // move the button 10px down from the neighbour buttons
                         },
                     },
